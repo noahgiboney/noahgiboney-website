@@ -6,3 +6,9 @@
     margin: 30px 15% 0;
     gap: 30px;
 }
+
+@media (max-width: 768px) {
+    .page {
+        margin: 30px 5% 0;
+    }
+}

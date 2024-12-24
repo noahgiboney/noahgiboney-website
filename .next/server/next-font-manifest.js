@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/noahgiboney/Desktop/noahgiboney-website/src/app/layout\":[\"static/media/1de9c871cd3a3669-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
