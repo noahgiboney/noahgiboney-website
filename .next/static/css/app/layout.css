@@ -653,9 +653,6 @@ video {
 .inline-flex {
   display: inline-flex;
 }
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
 .h-10 {
   height: 2.5rem;
 }
@@ -703,9 +700,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.shrink-0 {
-  flex-shrink: 0;
 }
 .-translate-x-28 {
   --tw-translate-x: -7rem;
@@ -785,9 +779,6 @@ video {
 }
 .bg-destructive {
   background-color: hsl(var(--destructive));
-}
-.bg-muted {
-  background-color: hsl(var(--muted));
 }
 .bg-primary {
   background-color: hsl(var(--primary));

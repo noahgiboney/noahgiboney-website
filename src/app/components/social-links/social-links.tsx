@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./social-links.module.css"; 
-import links from "@/app/model/social-links";
-import { SocialLink } from "@/app/model/social-links";
+import links from "@model/social-links";
+import { SocialLink } from "@model/social-links";
 
 export default function SocialLinks() {
     return (
