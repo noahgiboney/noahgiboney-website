@@ -1,0 +1,7 @@
+.textFields {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-horizontal: 20%;
+    width: 50%;
+}

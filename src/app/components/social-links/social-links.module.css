@@ -1,0 +1,13 @@
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover {
+    transform: scale(1.2) rotate(10deg); 
+    color: gray; 
+}

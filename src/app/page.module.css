@@ -1,0 +1,38 @@
+.page {
+  height: 100vh;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row; 
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.textContent {
+  flex: 1;
+}
+
+.imageContainer {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.image {
+  border-radius: 50%; 
+  border: 2.5px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.location {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 1.1rem;
+}
