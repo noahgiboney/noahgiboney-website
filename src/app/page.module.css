@@ -1,14 +1,9 @@
-.page {
-  height: 100vh;
-}
-
 .cardContent {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   gap: 30px;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
 .textContent {
@@ -16,14 +11,15 @@
 }
 
 .imageContainer {
-  flex: 1; 
+  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  padding: 10px
 }
 
 .image {
-  border-radius: 50%; 
+  border-radius: 50%;
   border: 2.5px solid black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   object-fit: cover;
@@ -35,4 +31,46 @@
   align-items: center;
   padding-top: 10px;
   font-size: 1.1rem;
+}
+
+.lowerSection {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  justify-content: evenly;
+}
+
+.lowerSection h3 {
+  font-size: 2.5rem;
+}
+
+.interestsSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .cardContent {
+    flex-direction: column; 
+  }
+
+  .textContent,
+  .imageContainer {
+    width: 100%; 
+  }
+
+  .imageContainer {
+    padding-bottom: 30px;
+  }
+
+  .image {
+    width: 250px;
+    height: 250px;
+  }
 }

@@ -7,13 +7,13 @@ export default function SocialLinks() {
     return (
         <div className={styles.links}>
             {links.map((link, index) => (
-                <SocialLink key={index} link={link} />
+                <SocialLinkItem key={index} link={link} />
             ))}
         </div>
     );
 }
 
-function SocialLink({ link }: { link: SocialLink }) {
+export function SocialLinkItem({ link }: { link: SocialLink }) {
     const Icon = link.label;
     return (
         <Link href={link.href} target="_blank" rel="noopener noreferrer" className={styles.link}>

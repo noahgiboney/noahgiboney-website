@@ -24,7 +24,6 @@ export default function RootLayout({
       <body className={kanit.className} >
         <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
