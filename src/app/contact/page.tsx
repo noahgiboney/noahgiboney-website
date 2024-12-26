@@ -1,5 +1,4 @@
 "use client";
-import PageBody from "@/app/components/pagebody/pagebody";
 import { Input } from "@/app/components/ui/input";
 import { Textarea } from "@/app/components/ui/textarea";
 import styles from "./contact.module.css";
@@ -58,11 +57,11 @@ export default function ContactPage() {
   }
 
   return (
-    <PageBody title="Contact">
-      <p className="text-xl">
-        Send me a message below or reach out on any of my socials.
-      </p>
-      <SocialLinks />
+    <div className="my-10 flex flex-col items-center mx-[7%] sm:mx-[15%] md:mx-[12%] space-y-10 h-screen">
+      <div className="flex flex-col items-center space-y-5">
+        <h1 className="text-5xl">Contact</h1>
+        <SocialLinks />
+      </div>
       <form ref={form} className={styles.textFields}>
         <Input
           name="name"
@@ -99,6 +98,6 @@ export default function ContactPage() {
         />
       </form>
       <MetallicButton onClick={sendMessage}>Send</MetallicButton>
-    </PageBody>
+    </div>
   );
 }

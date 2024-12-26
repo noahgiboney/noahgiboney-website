@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "@components/footer/footer";
-import Navbar from "@components/navbar/navbar";
-import { Kanit } from 'next/font/google'
+import Navbar from "@/app/components/navbar";
+import { Kanit } from "next/font/google";
 
 const kanit = Kanit({
-  weight: '400',
-  subsets: ['latin'],
-})
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Noah Giboney",
   description: "Noah Giboney's Website",
+  icons: {
+    icon: "/profilepicture1.png",
+  },
 };
 
 export default function RootLayout({
@@ -21,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={kanit.className} >
+      <body className={kanit.className}>
         <Navbar />
         {children}
       </body>

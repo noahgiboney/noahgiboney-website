@@ -1,0 +1,17 @@
+.embedContainer {
+    width: 100%;
+    max-width: 853px;
+    margin: 0 auto; 
+  }
+  
+  .embedContainer iframe {
+    width: 100%;
+    height: 500px;
+  }
+  
+  @media (max-width: 600px) {
+    .embedContainer iframe {
+      width: 100%;
+      height: 300px;
+    }
+  }

@@ -34,7 +34,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/components/youtube-embed/youtube-embed.jsx"  ],
   "exclude": [
     "node_modules"
   ]
