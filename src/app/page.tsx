@@ -52,9 +52,10 @@ function AboutMeCard() {
           </CardHeader>
           <CardContent>
             <p>
-              I'm a fourth-year Computer Science student at Cal Poly, San Luis
-              Obispo, specializing in iOS software engineering. Check out my
-              projects and learn more about me below.
+              I am a student with a strong focus in iOS App Development. I also
+              enjoy exploring other parts of the Apple ecosystem, Android, and
+              web development. In my free time I like to play soccer and lift
+              weights.
             </p>
           </CardContent>
           <CardFooter>
