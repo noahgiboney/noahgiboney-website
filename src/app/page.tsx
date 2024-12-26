@@ -75,7 +75,7 @@ function AboutMeCard() {
   );
 }
 
-export function ProjectsSection() {
+function ProjectsSection() {
   return (
     <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
       <div className="flex flex-col space-y-5 px-5">
@@ -105,7 +105,7 @@ export function ProjectsSection() {
   );
 }
 
-export function InterestsSection() {
+function InterestsSection() {
   return (
     <div className="flex flex-col space-y-5">
       <h2 className="text-3xl sm:text-4xl font-bold px-3 sm:px-5">
