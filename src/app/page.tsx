@@ -82,7 +82,7 @@ function ProjectsSection() {
       <div className="flex flex-col space-y-5 px-5">
         <h2 className="text-4xl font-bold text-gray-800">Projects</h2>
         <Link
-          href="/projects"
+          href="https://apps.apple.com/us/developer/noah-giboney/id1732186750"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center space-x-3 hover:text-gray-500 origin-center"
