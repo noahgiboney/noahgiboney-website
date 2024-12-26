@@ -38,14 +38,14 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
     <div className="flex flex-col my-10 mx-[7%] sm:mx-[15%] md:mx-[12% space-y-7">
       {/* Project Details */}
       <div className="flex flex-col items-start space-y-3">
-        <div className="flex items-center sm:items-start gap-4">
-          <Image
-            src={details.appIconSrc}
-            alt="App Logo"
-            width={80}
-            height={80}
-            className={`${styles.appIcon} sm:w-[100px] sm:h-[100px]`}
-          />
+        <div className="flex items-center gap-4">
+        <Image
+              src={details.appIconSrc}
+              alt="App logo"
+              width={100}
+              height={100}
+              className="w-24 h-24 rounded-xl border-2 border-gray-300 bg-gray-100 flex justify-center items-center object-cover"
+            />
           <h2 className="text-3xl sm:text-5xl font-bold text-center sm:text-left">
             {details.title}
           </h2>
