@@ -13,9 +13,9 @@ type Form = {
   message: string;
 };
 
-const serviceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID ?? "";
-const templateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID ?? "";
-const publicKey = process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY ?? "";
+const serviceID = "service_7w8yfx9"
+const templateID = "template_hv656kl"
+const publicKey = "2Pg_QENVYuxD8e3ur"
 
 export default function ContactPage() {
   const form = useRef<HTMLFormElement>(null);
