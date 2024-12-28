@@ -52,10 +52,8 @@ function AboutMeCard() {
           </CardHeader>
           <CardContent>
             <p>
-              I am a student with a strong focus in iOS App Development. I also
-              enjoy exploring other parts of the Apple ecosystem, Android, and
-              web development. In my free time I like to play soccer and lift
-              weights.
+              I am a student with a strong focus in iOS App Development. In my
+              free time I like to play soccer and lift weights.
             </p>
           </CardContent>
           <CardFooter>
