@@ -24,6 +24,7 @@ import { projectPreviews } from "./model/project/project-preview";
 import { Separator } from "@/app/components/ui/separator";
 import ProjectPreviewCard from "@/app/components/project-preview-card";
 import { Badge } from "@/app/components/ui/badge";
+import InterestPhoto from "./components/InterestPhoto";
 
 export default function Home() {
   return (
@@ -52,9 +53,9 @@ function AboutMeCard() {
           </CardHeader>
           <CardContent>
             <p>
-              I am a student with a strong focus in iOS App Development. In my
-              free time I like to play soccer, light weights, and explore other
-              sectors of technology.
+              I am currently studying computer science at Cal Poly. In my free
+              time I like to build iOS apps, play soccer, lift weights, and
+              listen to music.
             </p>
           </CardContent>
           <CardFooter>
@@ -122,12 +123,6 @@ function InterestsSection() {
             Soccer
           </Badge>
           <Badge variant="outline" className="text-lg sm:text-xl">
-            Circuits and Electronics
-          </Badge>
-          <Badge variant="outline" className="text-lg sm:text-xl">
-            Cars
-          </Badge>
-          <Badge variant="outline" className="text-lg sm:text-xl">
             Music
           </Badge>
           <Badge variant="outline" className="text-lg sm:text-xl">
@@ -137,67 +132,17 @@ function InterestsSection() {
 
         {/* Images Section */}
         <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] overflow-hidden rounded-lg shadow-lg">
-              <Image
-                src="/gti.jpg"
-                alt="GTI"
-                width={200}
-                height={200}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <p className="text-xs sm:text-sm text-gray-500">My MK7 GTI</p>
-          </div>
-          <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] overflow-hidden rounded-lg shadow-lg">
-            <Image
-              src="/circuit.jpg"
-              alt="Eternal Atake"
-              width={200}
-              height={200}
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] overflow-hidden rounded-lg shadow-lg">
-              <Image
-                src="/vinny.jpg"
-                alt="Eternal Atake"
-                width={200}
-                height={200}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <p className="text-xs sm:text-sm text-gray-500">Vinny: My Dog</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] overflow-hidden rounded-lg shadow-lg">
-              <Image
-                src="/ea.jpg"
-                alt="Eternal Atake"
-                width={200}
-                height={200}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <p className="text-xs sm:text-sm text-gray-500">
-              Eternal Atake: My Favorite Album
-            </p>
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] overflow-hidden rounded-lg shadow-lg">
-              <Image
-                src="/ea2.jpeg"
-                alt="Eternal Atake"
-                width={200}
-                height={200}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <p className="text-xs sm:text-sm text-gray-500">
-              Paar In The Mars: My Favorite Song
-            </p>
-          </div>
+          <InterestPhoto photo="/gti.jpg" photoAlt="GTI" caption="My MK7 GTI" />
+          <InterestPhoto
+            photo="/ea.jpg"
+            photoAlt="Eternal Atake"
+            caption="Eternal Atake: My Favorite Album"
+          />
+          <InterestPhoto
+            photo="/ea2.jpeg"
+            photoAlt="Eternal Atake 2"
+            caption=" Paar In The Mars: My Favorite Song"
+          />
         </div>
       </div>
     </div>
