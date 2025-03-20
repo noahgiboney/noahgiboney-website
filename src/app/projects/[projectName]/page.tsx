@@ -39,13 +39,13 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
       {/* Project Details */}
       <div className="flex flex-col items-start space-y-3">
         <div className="flex items-center gap-4">
-        <Image
-              src={details.appIconSrc}
-              alt="App logo"
-              width={100}
-              height={100}
-              className="w-24 h-24 rounded-xl border-2 border-gray-300 bg-gray-100 flex justify-center items-center object-cover"
-            />
+          <Image
+            src={details.appIconSrc}
+            alt="App logo"
+            width={100}
+            height={100}
+            className="w-24 h-24 rounded-xl border-2 border-gray-300 bg-gray-100 flex justify-center items-center object-cover"
+          />
           <h2 className="text-3xl sm:text-5xl font-bold text-center sm:text-left">
             {details.title}
           </h2>
@@ -63,15 +63,16 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
             </div>
           </StaticMetallicButton>
         </Link>
-        <Link
-          href={details.githubHREF}
-          target="_blank"
-          className="transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out"
-        >
-          <FaGithub className="text-3xl sm:text-4xl" />
-        </Link>
+        {details.githubHREF && (
+          <Link
+            href={details.githubHREF}
+            target="_blank"
+            className="transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out"
+          >
+            <FaGithub className="text-3xl sm:text-4xl" />
+          </Link>
+        )}
       </div>
-
       {/* Introduction */}
       <p className="text-base sm:text-lg text-center sm:text-left">{intro}</p>
 

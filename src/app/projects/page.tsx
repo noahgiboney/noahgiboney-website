@@ -1,7 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { projectPreviews } from "@/app/model/project/project-preview"; // Adjust the import path
 import PageBody from "../components/pagebody/pagebody";
-import ProjectPreviewCard from "../components/project-preview-card"; // Adjust the import path
+import ProjectPreviewCard from "../components/ProjectPreviewCard"; // Adjust the import path
 import Link from "next/link";
 import { FaAppStoreIos } from "react-icons/fa";
 

@@ -16,24 +16,19 @@ export const projects: Project[] = [
   {
     details: projectDetails[0],
     intro:
-      "Discover Haunted Locations: Browse a list of over ten thousand haunted spots across the United States, each with detailed information and spine-chilling stories told by other users. Visit & Compete: Track the locations you've visited and climb the leaderboard. Challenge your friends and see who can visit the most haunted sites. Explore Nearby: Find haunted locations near you with the app's location-based search and share your ghost hunting experience. Interactive Map: View and navigate to haunted places with an easy-to-use map interface, allowing your exploration to be visual. Request a location: Know of spot not in our system? File a request to broaden the ecosystem.",
+      "For my senior capstone project at Cal Poly, I developed the Reality Market. The goal of this app was to create a unique marketplace while learning and applying good software devleopment practices along the way. The Reality Market allows users to transform everyday items into detailed 3D models, which can then be listed on the marketplace. Sellers can manage their listings by editing, deleting, or organizing them into categories. The app also allows users to save their favorite listings for later viewing. The main shopping feed consists of robust search functionality, sorting options, and filters to help users discover exactly what they’re looking for efficiently.",
     appstoreHREF:
-      "https://apps.apple.com/us/app/cryptid-coordinates/id6478195420",
+      "https://apps.apple.com/us/app/reality-market/id6478195420",
     sections: [
       {
-        title: "Opitmization with SwiftData",
+        title: "Augmented Reality",
         content:
-          "In order to greatly optimize performance of this app, I used SwiftData for location querying. On the the users first load of the app, locations objects are decoded from a JSON file and then converted to SwiftData models and inserted into the model context. This allows lightning fast querying of locations, great for location based searches, text searches, etc.",
+          "What makes the Reality Market unique is the incorperation of augmented reality within the shopping and selling experience. Users are able to scan their items into 3D models. This was made possbile by utalizing the object capture sample project provided made by apple. This flow returns a 3D Model in USDZ format, which then gets sent to storage. In order to scan an item, users will need to have a phone with LiDAR hardware. This is found only on pro models of the iPhone. Shoppers are also to view items in AR, in their own space. This is made possible by using apples quick look preivew view.",
       },
       {
-        title: "MapKit",
+        title: "Using Vapor",
         content:
-          "MapKit is a great framework that offers an immersive way to browse haunted locations as map markers around users real time location. There is a high volume of locations on the map so I used ClusterMap as a package dependecy to improve performace of rendering markers on the map. Another way of optimizing the map was to compute a geohash, which is essentially a geographical box where the coordinates lies and you can control the degree of that hash. Geohashes were used as a basis for clustering and reloading the annotations when the camera moved.",
-      },
-      {
-        title: "Authentication",
-        content:
-          "In order to maintain my user base, I am using Apple ID to authenticate users through Firebase Auth. This simplified onboarding for users, as the app is exclusive to iOS.",
+          "Using vapor to build the apps backend was a great experince. Using swift on the front-end and the sever was a great experience and I felt it kept the codebases very consistent and clean. I also used the Fluent ORM to interact with the postgres database. ",
       },
     ],
   },

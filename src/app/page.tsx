@@ -22,7 +22,7 @@ import {
 } from "@/app/components/ui/carousel";
 import { projectPreviews } from "./model/project/project-preview";
 import { Separator } from "@/app/components/ui/separator";
-import ProjectPreviewCard from "@/app/components/project-preview-card";
+import ProjectPreviewCard from "@/app/components/ProjectPreviewCard";
 import { Badge } from "@/app/components/ui/badge";
 import InterestPhoto from "./components/InterestPhoto";
 
