@@ -7,8 +7,8 @@ import { Separator } from "@/app/components/ui/separator";
 import styles from "./project-page.module.css";
 import { Badge } from "@/app/components/ui/badge";
 import { usePathname } from "next/navigation";
-import { projects, Project } from "@/app/model/project/project";
-import { ProjectSection } from "@model/project/project";
+import { projects, Project } from "@/model/project/project";
+import { ProjectSection } from "@/model/project/project";
 import YoutubeEmbed from "@components/youtube-embed/youtube-embed";
 
 export default function Home() {

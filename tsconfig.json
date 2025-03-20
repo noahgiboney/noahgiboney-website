@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths" : {
-      "@/*" : ["src/*"],
-      "@model/*" : ["src/app/model/*"],
-      "@components/*" : ["src/app/components/*"]
+    "paths": {
+      "@/*": ["src/*"],
+      "@model/*": ["src/model/*"],
+      "@components/*": ["src/app/components/*"]
     },
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -33,9 +29,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/app/components/youtube-embed/youtube-embed.jsx"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "src/app/components/youtube-embed/youtube-embed.jsx"
+  ],
+  "exclude": ["node_modules"]
 }

@@ -9,7 +9,7 @@ import Image from "next/image";
 import { Badge } from "@/app/components/ui/badge";
 import Link from "next/link";
 import StaticMetallicButton from "./metallic-button/static-metallic-button";
-import { ProjectPreview } from "@/app/model/project/project-preview";
+import { ProjectPreview } from "@/model/project/project-preview";
 import { Separator } from "@/app/components/ui/separator";
 
 export default function ProjectPreviewCard({
