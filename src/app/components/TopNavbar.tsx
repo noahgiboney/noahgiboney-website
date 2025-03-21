@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FiActivity, FiMenu, FiX } from "react-icons/fi";
 
-export default function Navbar() {
+export default function TopNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
