@@ -2,8 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaStreetView } from "react-icons/fa";
-
+import { GiAlienFire } from "react-icons/gi";
 
 export default function TopNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +15,7 @@ export default function TopNavbar() {
     <nav className="relative flex items-center justify-between md:justify-around px-10 md:px-0 border-b border-gray-200 p-4">
       <Link href="/">
         <div className="flex items-center gap-5 text-2xl sm:text-4xl cursor-pointer">
-        <FaStreetView />
+        <GiAlienFire className="text-3xl sm:text-5xl"/>
           <p className="font-bold">NG</p>
         </div>
       </Link>
