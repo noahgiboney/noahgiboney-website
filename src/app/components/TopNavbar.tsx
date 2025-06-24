@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { FiActivity, FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
+import { FaStreetView } from "react-icons/fa";
+
 
 export default function TopNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,9 +15,9 @@ export default function TopNavbar() {
   return (
     <nav className="relative flex items-center justify-between md:justify-around px-10 md:px-0 border-b border-gray-200 p-4">
       <Link href="/">
-        <div className="flex items-center gap-2 text-2xl sm:text-4xl cursor-pointer">
+        <div className="flex items-center gap-5 text-2xl sm:text-4xl cursor-pointer">
+        <FaStreetView />
           <p className="font-bold">NG</p>
-          <FiActivity />
         </div>
       </Link>
 

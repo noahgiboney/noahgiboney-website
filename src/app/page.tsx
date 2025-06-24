@@ -44,18 +44,15 @@ function AboutMeCard() {
           <CardHeader>
             <CardTitle className="text-5xl sm:text-7xl">Noah Giboney</CardTitle>
             <CardDescription className="text-xl">
-              Computer Science @ Cal Poly, San Luis Obispo
               <div className={styles.location}>
                 <MdLocationPin />
-                San Luis Obispo, CA
+                Houston, TX
               </div>
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p>
-              I am currently studying computer science at Cal Poly. In my free
-              time I like to build iOS apps, play soccer, lift weights, and
-              listen to music.
+            Welcome to my website. This is my corner of the internet where I share a litle bit about my journey in life.
             </p>
           </CardContent>
           <CardFooter>
