@@ -35,6 +35,29 @@ export const projects: Project[] = [
   {
     details: projectDetails[1],
     intro:
+      "Cryptid Coordinates is an iOS app to explore haunted locations across the United States. Discover over ten thousand haunted spots, track visits, compete on leaderboards, and share your paranormal experiences.",
+    appstoreHREF: "https://apps.apple.com/us/app/cryptid-coordinates/id6478195420",
+    sections: [
+      {
+        title: "Architecture",
+        content:
+          "The app leverages SwiftData for efficient location querying. On first load, location data is decoded from a JSON file, converted to SwiftData models, and inserted into the model context, enabling fast location-based and text searches. Firebase Auth with Apple ID simplifies user onboarding, exclusive to iOS.",
+      },
+      {
+        title: "Map Integration",
+        content:
+          "MapKit provides an immersive interface for browsing haunted locations as map markers around the user's real-time location. To optimize performance with high marker volumes, the ClusterMap package is used for efficient rendering. Geohashes are computed to create geographical boxes for clustering and reloading annotations when the map camera moves.",
+      },
+      {
+        title: "Features",
+        content:
+          "Users can browse over ten thousand haunted locations with detailed information and user-submitted stories. The app supports tracking visited locations, competing on leaderboards, and exploring nearby haunted spots via location-based search. An interactive map enhances visual exploration, and users can request new locations to expand the database.",
+      },
+    ],
+  },
+  {
+    details: projectDetails[2],
+    intro:
       "Asteroid Visison is an iOS app to browse browse and filter asteroids. This was made possible by the NASA NEO Objects REST API. Users can explore orbital data and build a list of favorites.",
     appstoreHREF: "https://apps.apple.com/us/app/asteroid-vision/id6480248381",
     sections: [
