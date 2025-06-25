@@ -6,7 +6,7 @@ interface InterestPhotoProps {
   caption: string;
 }
 
-export default function InterestPhoto({ photo, photoAlt, caption }: InterestPhotoProps) {
+export default function AboutMeItem({ photo, photoAlt, caption }: InterestPhotoProps) {
   return (
     <div className="flex flex-col items-center space-y-2">
       <div className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] overflow-hidden rounded-lg shadow-lg">
