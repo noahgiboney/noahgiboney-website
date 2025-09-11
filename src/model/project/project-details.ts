@@ -42,7 +42,6 @@ export const projectDetails: ProjectDetails[] = [
   {
     title: "Cryptid Coordinates",
     appIconSrc: "/cryptid-coordinates/cryptid-coordinates-app-logo.svg",
-    githubHREF: "https://github.com/noahgiboney/cryptid-coordinates",
     skills: ["SwiftUI", "Firebase", "SwiftData", "MapKit"],
     screenshots: [
       {
