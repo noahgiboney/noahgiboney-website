@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import SocialLinks from "./components/social-links/social-links";
 import { MdLocationPin } from "react-icons/md";
-import { FaAppStoreIos, FaCircle } from "react-icons/fa";
+import { FaAppStoreIos } from "react-icons/fa";
 import {
   Card,
   CardContent,
@@ -78,7 +78,7 @@ function ProjectsSection() {
   return (
     <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
       <div className="flex flex-col space-y-5 px-5">
-        <h2 className="text-4xl font-bold text-gray-800">Work</h2>
+        <h2 className="text-4xl font-bold text-gray-800">Projects</h2>
         <Link
           href="https://apps.apple.com/us/developer/noah-giboney/id1732186750"
           target="_blank"
@@ -86,7 +86,7 @@ function ProjectsSection() {
           className="flex items-center space-x-3 hover:text-gray-500 origin-center"
         >
           <FaAppStoreIos className="text-3xl transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out" />
-          <p className="text-xl font-medium">3000+ App Store Downloads</p>
+          <p className="text-xl font-medium">5000+ App Store Downloads</p>
         </Link>
       </div>
 

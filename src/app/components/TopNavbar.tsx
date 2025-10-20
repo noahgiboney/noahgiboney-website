@@ -14,10 +14,7 @@ export default function TopNavbar() {
   return (
     <nav className="relative flex items-center justify-between md:justify-around px-10 md:px-0 border-b border-gray-200 p-4">
       <Link href="/">
-        <div className="flex items-center gap-4 text-2xl sm:text-4xl cursor-pointer">
-        <GiAlienFire className="text-3xl sm:text-5xl"/>
-          <p className="font-bold">NG</p>
-        </div>
+      <p className="font-bold text-4xl hover:scale-110 hover:text-gray-500 transition-transform">NG</p>
       </Link>
 
       <div

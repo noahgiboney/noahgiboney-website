@@ -14,7 +14,7 @@ export type ProjectSection = {
 
 export const projects: Project[] = [
   {
-    details: projectDetails[0],
+    details: projectDetails[1],
     intro:
       "For my senior capstone project at Cal Poly, I developed the Reality Market. The goal of this app was to create a unique marketplace while learning and applying good software devleopment practices along the way. The Reality Market allows users to transform everyday items into detailed 3D models, which can then be listed on the marketplace. Sellers can manage their listings by editing, deleting, or organizing them into categories. The app also allows users to save their favorite listings for later viewing. The main shopping feed consists of robust search functionality, sorting options, and filters to help users discover exactly what they’re looking for efficiently.",
     appstoreHREF:
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    details: projectDetails[1],
+    details: projectDetails[0],
     intro:
       "Cryptid Coordinates is an iOS app to explore haunted locations across the United States. Discover over ten thousand haunted spots, track visits, compete on leaderboards, and share your paranormal experiences.",
     appstoreHREF: "https://apps.apple.com/us/app/cryptid-coordinates/id6478195420",

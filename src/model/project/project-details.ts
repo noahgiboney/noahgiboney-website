@@ -6,6 +6,7 @@ export type Screenshot = {
 export type ProjectDetails = {
   title: string;
   appIconSrc: string;
+  appIconTailwind: string;
   githubHREF?: string;
   skills: string[];
   screenshots: Screenshot[];
@@ -13,8 +14,41 @@ export type ProjectDetails = {
 
 export const projectDetails: ProjectDetails[] = [
   {
+    title: "Cryptid Coordinates",
+    appIconSrc: "/cryptid-coordinates/ghostBlack.svg",
+    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md p-2",
+    skills: ["SwiftUI", "SwiftData", "MapKit"],
+    screenshots: [
+      {
+        src: "/cryptid-coordinates/preview1.png",
+        caption: "Explore haunted locations",
+      },
+      {
+        src: "/cryptid-coordinates/preview2.png",
+        caption: "Share experiences",
+      },
+      {
+        src: "/cryptid-coordinates/preview3.png",
+        caption: "View locations on the map",
+      },
+      {
+        src: "/cryptid-coordinates/preview4.png",
+        caption: "Visit locations to detect paranormal activity",
+      },
+      {
+        src: "/cryptid-coordinates/preview5.png",
+        caption: "Compete on the leadeboard of visiting haunted locations",
+      },
+      {
+        src: "/cryptid-coordinates/preview6.png",
+        caption: "Add new locations",
+      },
+    ],
+  },
+  {
     title: "Reality Market",
     appIconSrc: "/reality-market/reality-market-app-logo.svg",
+    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md",
     skills: ["SwiftUI", "Vapor", "ARKit", "PostgreSQL"],
     screenshots: [
       {
@@ -40,41 +74,11 @@ export const projectDetails: ProjectDetails[] = [
     ],
   },
   {
-    title: "Cryptid Coordinates",
-    appIconSrc: "/cryptid-coordinates/cryptid-coordinates-app-logo.svg",
-    skills: ["SwiftUI", "Firebase", "SwiftData", "MapKit"],
-    screenshots: [
-      {
-        src: "/cryptid-coordinates/preview1.png",
-        caption: "Explore Haunted Locations",
-      },
-      {
-        src: "/cryptid-coordinates/preview2.png",
-        caption: "History of location with personal stories from users",
-      },
-      {
-        src: "/cryptid-coordinates/preview3.png",
-        caption: "View locations on the map",
-      },
-      {
-        src: "/cryptid-coordinates/preview4.png",
-        caption: "Visit locations to detect paranormal activity",
-      },
-      {
-        src: "/cryptid-coordinates/preview5.png",
-        caption: "Compete on the leadeboard of visiting haunted locations",
-      },
-      {
-        src: "/cryptid-coordinates/preview6.png",
-        caption: "Customizable Profile. Pick out a name and avatar",
-      },
-    ],
-  },
-  {
     title: "Asteroid Vision",
     appIconSrc: "/asteroid-vision/asteroid-vision-app-logo.png",
+    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md",
     githubHREF: "https://github.com/noahgiboney/asteroid-vision",
-    skills: ["SwiftUI", "MVVM", "Swift Concurrency", "SceneKit"],
+    skills: ["SwiftUI", "MVVM", "SceneKit"],
     screenshots: [
       {
         src: "/asteroid-vision/preview1.png",

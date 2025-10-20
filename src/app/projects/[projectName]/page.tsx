@@ -44,7 +44,7 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
             alt="App logo"
             width={100}
             height={100}
-            className="w-24 h-24 rounded-xl border-2 border-gray-300 bg-gray-100 flex justify-center items-center object-cover"
+            className={details.appIconTailwind}
           />
           <h2 className="text-3xl sm:text-5xl font-bold text-center sm:text-left">
             {details.title}

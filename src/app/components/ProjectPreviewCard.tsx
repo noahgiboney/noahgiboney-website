@@ -28,7 +28,7 @@ export default function ProjectPreviewCard({
               alt="App logo"
               width={100}
               height={100}
-              className="w-24 h-24 rounded-xl border-2 border-gray-300 bg-gray-100 flex justify-center items-center object-cover"
+              className={details.appIconTailwind}
             />
             <div className="flex flex-col items-start space-y-1">
               <p className="font-bold text-gray-800">{details.title}</p>
