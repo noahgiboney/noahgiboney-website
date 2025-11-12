@@ -53,8 +53,9 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
         <Separator className="w-full mt-2" />
       </div>
 
-      {/* Links */}
+      {/* Links */}      
       <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 items-center sm:items-start">
+      {appstoreHREF && (
         <Link href={appstoreHREF} target="_blank">
           <StaticMetallicButton>
             <div className="flex items-center gap-2">
@@ -63,6 +64,7 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
             </div>
           </StaticMetallicButton>
         </Link>
+      )}
         {details.githubHREF && (
           <Link
             href={details.githubHREF}
