@@ -4,7 +4,7 @@ export type Project = {
   details: ProjectDetails;
   intro: string;
   sections: ProjectSection[];
-  appstoreHREF: string;
+  appstoreHREF?: string;
 };
 
 export type ProjectSection = {
@@ -57,6 +57,25 @@ export const projects: Project[] = [
   },
   {
     details: projectDetails[2],
+    intro:
+      "Command line interfercae for automating the converting of audio files, tagging them with metadata, and uploading to apple music. For usage and source code checkout out the github repository linked above.",
+    sections: [
+      {
+        title: "Motivation",
+        content: "Uploading local files iTunes/Apple Music with custom metadata can take a great amount of time. I built Music Tagger to speed up this proccess by setting audio file metadata in bulk and exporting to iTunes for the files to upload to my cloud library."
+      },
+      {
+        title: "How It Works",
+        content: "Music Tagger is designed to process a set of closely relate files in bulk via a folder on your local machine. For example songs from the same album. It uses the Swift ArgumentParser to pass options to the program, and then converts all audio files to M4A (Apples Audio Format), using the AVFoundation framework. Metadata is set as specified then the song is moved to your local iTunes library. Files of course are proccesed in parallel using modern Swift conurrency. Files should be in M4A in order to get the explicit song label. See the README within the github repository for more information on usage and CLI options."
+      },
+      {
+        title: "Limitations",
+        content: "One of the current limitations of the tool is it requires manual observation to verify that the files have succesfully uploaded to your iTunes library. From what I have seen this is usually about a 95% success rate, however I will sometimes have uploaded procceses crash after the Music Tagger runs, which then would require a re-run."
+      },
+    ],
+  },
+  {
+    details: projectDetails[3],
     intro:
       "Asteroid Visison is an iOS app to browse browse and filter asteroids. This was made possible by the NASA NEO Objects REST API. Users can explore orbital data and build a list of favorites.",
     appstoreHREF: "https://apps.apple.com/us/app/asteroid-vision/id6480248381",

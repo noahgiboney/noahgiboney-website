@@ -74,6 +74,14 @@ export const projectDetails: ProjectDetails[] = [
     ],
   },
   {
+    title: "Music Tagger",
+    appIconSrc: "/music-tagger/logo.png",
+    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover",
+    skills: ["Swift", "AVFoundation"],
+    githubHREF: "https://github.com/noahgiboney/music-tagger",
+    screenshots: [],
+  },
+  {
     title: "Asteroid Vision",
     appIconSrc: "/asteroid-vision/asteroid-vision-app-logo.png",
     appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md",

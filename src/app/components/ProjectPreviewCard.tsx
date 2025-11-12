@@ -17,6 +17,7 @@ export default function ProjectPreviewCard({
   description,
   screenshot,
   learnMoreHREF,
+  screenshotWidth
 }: ProjectPreview) {
   return (
     <Card className="w-full flex flex-col md:flex-row">
@@ -56,7 +57,7 @@ export default function ProjectPreviewCard({
         <Image
           src={screenshot}
           alt="App Screenshot"
-          width={175}
+          width={screenshotWidth}
           height={400}
           className="object-contain"
         />
