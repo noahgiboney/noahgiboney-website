@@ -29,7 +29,7 @@ export const projectPreviews: ProjectPreview[] = [
   {
     details: projectDetails[2],
     description:
-      "Command line interface for automating the converting of audio files, tagging them with metadata, and uploading to Apple Music.",
+      "Command line tool for automating the converting of audio files, tagging them with metadata, and uploading to Apple Music.",
     learnMoreHREF: "/projects/music-tagger",
     screenshot: "/music-tagger/demo.jpg",
     screenshotWidth: 300,
