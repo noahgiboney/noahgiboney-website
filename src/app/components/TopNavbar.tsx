@@ -17,7 +17,7 @@ export default function TopNavbar() {
   const linkClasses = (href: string) =>
     `relative text-black font-semibold px-4 py-2 transition-transform hover:scale-110 hover:text-gray-500 ${
       activeLink === href
-        ? "after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-400"
+        ? "after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-500"
         : ""
     }`;
 

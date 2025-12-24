@@ -24,7 +24,6 @@ import { projectPreviews } from "../model/project/project-preview";
 import { Separator } from "@/app/components/ui/separator";
 import ProjectPreviewCard from "@/app/components/ProjectPreviewCard";
 import { Badge } from "@/app/components/ui/badge";
-import AboutMeItem from "./components/AboutMeItem";
 
 export default function Home() {
   return (
@@ -52,8 +51,8 @@ function NameSection() {
           </CardHeader>
           <CardContent>
             <p>
-              Welcome to my website, my space to reflect on paths taken, and
-              those yet unseen.
+              Welcome to my website, my space to reflect on the journeys I have
+              taken, and those yet unseen.
             </p>
           </CardContent>
           <CardFooter>
@@ -77,61 +76,80 @@ function NameSection() {
 function AboutMeSection() {
   return (
     <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
-      <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 px-5">About me</h2>
+      <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 px-5">
+        About me
+      </h2>
       <Card>
         <CardContent className="flex flex-col sm:flex-row sm:justify-around items-center gap-6 py-5">
           <div className="flex items-center gap-3 w-full sm:flex-1">
             <div className="flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200">
-              <Image
-                src={"/slo-logo.svg"}
-                alt="Cal Poly logo"
-                className="w-[70px] h-[70px] py-1"
-                width={70}
-                height={70}
-              />
+              <Link
+                href="https://www.calpoly.edu/major/computer-science"
+                target="_blank"
+              >
+                <Image
+                  src={"/slo-logo.svg"}
+                  alt="Cal Poly logo"
+                  className="w-[70px] h-[70px] py-1 shadow-md"
+                  width={70}
+                  height={70}
+                />
+              </Link>
             </div>
             <div className="min-w-0 flex-1">
               <p className="font-bold text-lg">B.S Computer Science</p>
               <p className="text-sm text-gray-600">Cal Poly, San Luis Obispo</p>
-              <p className="text-sm text-gray-500 line-clamp-2">
+              <p className="text-sm text-gray-500 line-clamp-3">
                 Graduated class of 2025. Learn by doing.
               </p>
             </div>
           </div>
           <div className="flex items-center gap-3 w-full sm:flex-1">
             <div className="flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200">
-              <Image
-                src={"/work/hpe.svg"}
-                alt="HPE Logo"
-                className="w-[70px] h-[70px] px-2"
-                width={70}
-                height={70}
-              />
+              <Link
+                href="https://www.hpe.com/us/en/greenlake.html?utm_campaign=FY25_CD_GB_GD_AMS_NA_Simplify_Hybrid_Cloud_management&utm_medium=PS&utm_source=GG&utm_content=521124404&plid=PSF-00000449&ef_id=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE:G:s&s_kwcid=AL!13472!3!!!!x!!!22034838876!&gad_source=1&gad_campaignid=22050296106&gbraid=0AAAAACRP5IA5IDKzAzwcUrD5Uk8ULhrr_&gclid=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE"
+                target="_blank"
+              >
+                <Image
+                  src={"/work/hpe.svg"}
+                  alt="HPE Logo"
+                  className="w-[70px] h-[70px] px-2 shadow-md"
+                  width={70}
+                  height={70}
+                />
+              </Link>
             </div>
             <div className="min-w-0 flex-1 px-2">
               <p className="font-bold text-lg">System Test Engineer</p>
               <p className="text-sm text-gray-600">
                 Hewlett Packard Enterprise
               </p>
-              <p className="text-sm text-gray-500 line-clamp-2">
+              <p className="text-sm text-gray-500 line-clamp-3">
                 System software test for high performance computing.
               </p>
             </div>
           </div>
           <div className="flex items-center gap-3 w-full sm:flex-1">
-            <div className="flex-shrink-0 w-[75px] h-[75px] rounded-lg overflow-hidden">
-              <Image
-                src="/ea.jpg"
-                alt="Eternal Atake cover art"
-                width={75}
-                height={75}
-                className="object-cover w-full h-full"
-              />
+            <div className="flex-shrink-0 w-[79px] h-[79px] rounded-lg overflow-hidden shadow-md">
+              <Link
+                href={
+                  "https://www.youtube.com/watch?v=juoznBaQbJE&list=PLC-tfB9OwTFHdk7GnG1CAoxUr4rbV2rci"
+                }
+                target="_blank"
+              >
+                <Image
+                  src="/ea.jpg"
+                  alt="Eternal Atake cover art"
+                  width={79}
+                  height={79}
+                  className="object-cover w-full h-full"
+                />
+              </Link>
             </div>
             <div className="min-w-0 flex-1 px-2">
               <p className="font-bold text-lg">Eternal Atake</p>
               <p className="text-sm text-gray-600">Lil Uzi Vert</p>
-              <p className="text-sm text-gray-500 line-clamp-2">
+              <p className="text-sm text-gray-500 line-clamp-3">
                 My favorite album of all time.
               </p>
             </div>
@@ -147,8 +165,8 @@ function AboutMeSection() {
               <Badge variant="secondary" className="text">
                 Soccer
               </Badge>
-              <Badge variant="secondary">iOS Development</Badge>
               <Badge variant="secondary">Systems Programming</Badge>
+              <Badge variant="secondary">iOS Development</Badge>
               <Badge variant="secondary">Music</Badge>
               <Badge variant="secondary">Fitness</Badge>
               <Badge variant="secondary">Health</Badge>
