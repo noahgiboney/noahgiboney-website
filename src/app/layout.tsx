@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Noah Giboney Website",
   description: "Personal website by Noah Giboney",
   icons: {
-    icon: "/profilepicture1.png",
+    icon: "/profile_old.png",
   },
 };
 
