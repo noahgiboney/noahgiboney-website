@@ -1,22 +1,28 @@
-"use client";
+"use client"
 import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { GiAlienFire } from "react-icons/gi";
 
 export default function TopNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("/");
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const closeMenu = () => setMenuOpen(false);
+  const handleLinkClick = (href: string) => {
+    setActiveLink(href);
+    setMenuOpen(false);
+  };
+
+  const linkClasses = (href: string) =>
+    `relative text-black font-semibold px-4 py-2 transition-transform hover:scale-110 hover:text-gray-500 ${
+      activeLink === href
+        ? "after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gray-400"
+        : ""
+    }`;
 
   return (
     <nav className="relative flex items-center justify-between md:justify-around px-10 md:px-0 border-b border-gray-200 p-4">
-      <Link href="/">
-      <p className="font-bold text-4xl hover:scale-110 hover:text-gray-500 transition-transform">NG</p>
-      </Link>
-
       <div
         className="flex items-center text-2xl md:hidden cursor-pointer"
         onClick={toggleMenu}
@@ -31,22 +37,24 @@ export default function TopNavbar() {
       >
         <Link
           href="/"
-          className="text-black font-semibold px-4 py-2 hover:scale-110 hover:text-gray-500 transition-transform"
-          onClick={closeMenu}
+          className={linkClasses("/")}
+          onClick={() => handleLinkClick("/")}
         >
-          About
+          Home
         </Link>
+
         <Link
           href="/projects"
-          className="text-black font-semibold px-4 py-2 hover:scale-110 hover:text-gray-500 transition-transform"
-          onClick={closeMenu}
+          className={linkClasses("/projects")}
+          onClick={() => handleLinkClick("/projects")}
         >
           Projects
         </Link>
+
         <Link
           href="/contact"
-          className="text-black font-semibold px-4 py-2 hover:scale-110 hover:text-gray-500 transition-transform"
-          onClick={closeMenu}
+          className={linkClasses("/contact")}
+          onClick={() => handleLinkClick("/contact")}
         >
           Contact
         </Link>

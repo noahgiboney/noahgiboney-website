@@ -29,14 +29,14 @@ import AboutMeItem from "./components/AboutMeItem";
 export default function Home() {
   return (
     <div className="my-10 flex flex-col mx-[7%] sm:mx-[15%] md:mx-[12%] space-y-14">
-      <NameCard />
-      <ProjectsSection />
+      <NameSection />
       <AboutMeSection />
+      <ProjectsSection />
     </div>
   );
 }
 
-function NameCard() {
+function NameSection() {
   return (
     <Card>
       <div className={styles.cardContent}>
@@ -46,14 +46,14 @@ function NameCard() {
             <CardDescription className="text-xl">
               <div className={styles.location}>
                 <MdLocationPin />
-                Houston, TX
+                HTX & LA
               </div>
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p>
-              Welcome to my website. This is my corner of the internet where I
-              share a litle bit about my journey in life.
+              Welcome to my website, my space to reflect on paths taken, and
+              those yet unseen.
             </p>
           </CardContent>
           <CardFooter>
@@ -62,7 +62,7 @@ function NameCard() {
         </div>
         <div className={styles.imageContainer}>
           <Image
-            src={"/profilepicture1.png"}
+            src="/profilepicture1.png"
             alt="Noah Giboney"
             className={styles.image}
             width={300}
@@ -71,6 +71,92 @@ function NameCard() {
         </div>
       </div>
     </Card>
+  );
+}
+
+function AboutMeSection() {
+  return (
+    <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
+      <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 px-5">About me</h2>
+      <Card>
+        <CardContent className="flex flex-col sm:flex-row sm:justify-around items-center gap-6 py-5">
+          <div className="flex items-center gap-3 w-full sm:flex-1">
+            <div className="flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200">
+              <Image
+                src={"/slo-logo.svg"}
+                alt="Cal Poly logo"
+                className="w-[70px] h-[70px] py-1"
+                width={70}
+                height={70}
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="font-bold text-lg">B.S Computer Science</p>
+              <p className="text-sm text-gray-600">Cal Poly, San Luis Obispo</p>
+              <p className="text-sm text-gray-500 line-clamp-2">
+                Graduated class of 2025. Learn by doing.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 w-full sm:flex-1">
+            <div className="flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200">
+              <Image
+                src={"/work/hpe.svg"}
+                alt="HPE Logo"
+                className="w-[70px] h-[70px] px-2"
+                width={70}
+                height={70}
+              />
+            </div>
+            <div className="min-w-0 flex-1 px-2">
+              <p className="font-bold text-lg">System Test Engineer</p>
+              <p className="text-sm text-gray-600">
+                Hewlett Packard Enterprise
+              </p>
+              <p className="text-sm text-gray-500 line-clamp-2">
+                System software test for high performance computing.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 w-full sm:flex-1">
+            <div className="flex-shrink-0 w-[75px] h-[75px] rounded-lg overflow-hidden">
+              <Image
+                src="/ea.jpg"
+                alt="Eternal Atake cover art"
+                width={75}
+                height={75}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="min-w-0 flex-1 px-2">
+              <p className="font-bold text-lg">Eternal Atake</p>
+              <p className="text-sm text-gray-600">Lil Uzi Vert</p>
+              <p className="text-sm text-gray-500 line-clamp-2">
+                My favorite album of all time.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <div className="flex flex-col items-start space-y-3 w-full">
+            <div className="flex flex-col">
+              <p className="text-lg">Interests</p>
+              <Separator />
+            </div>
+            <ul className="flex flex-wrap justify-start gap-4 list-none">
+              <Badge variant="secondary" className="text">
+                Soccer
+              </Badge>
+              <Badge variant="secondary">iOS Development</Badge>
+              <Badge variant="secondary">Systems Programming</Badge>
+              <Badge variant="secondary">Music</Badge>
+              <Badge variant="secondary">Fitness</Badge>
+              <Badge variant="secondary">Health</Badge>
+            </ul>
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
   );
 }
 
@@ -86,7 +172,7 @@ function ProjectsSection() {
           className="flex items-center space-x-3 hover:text-gray-500 origin-center"
         >
           <FaAppStoreIos className="text-3xl transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out" />
-          <p className="text-xl font-medium">5000+ App Store Downloads</p>
+          <p className="text-xl font-medium">6000+ App Store Downloads</p>
         </Link>
       </div>
 
@@ -101,43 +187,6 @@ function ProjectsSection() {
         <CarouselPrevious variant="secondary" />
         <CarouselNext variant="secondary" />
       </Carousel>
-    </div>
-  );
-}
-
-function AboutMeSection() {
-  return (
-    <div className="flex flex-col space-y-5">
-      <h2 className="text-3xl sm:text-4xl font-bold px-3 sm:px-5">About Me</h2>
-      <div className="flex flex-col space-y-6 sm:px-5 items-start">
-        {/* Hobbies Section */}
-        <ul className="flex flex-wrap justify-center gap-5 sm:gap-10 list-none">
-          <Badge variant="outline" className="text-lg sm:text-xl">
-            Programming
-          </Badge>
-          <Badge variant="outline" className="text-lg sm:text-xl">
-            Soccer
-          </Badge>
-          <Badge variant="outline" className="text-lg sm:text-xl">
-            Music
-          </Badge>
-        </ul>
-
-        {/* Items Section */}
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
-          <AboutMeItem photo="/gti.jpg" photoAlt="GTI" caption="My MK7 GTI" />
-          <AboutMeItem
-            photo="/ea.jpg"
-            photoAlt="Eternal Atake"
-            caption="Eternal Atake: My Favorite Album"
-          />
-          <AboutMeItem
-            photo="/ea2.jpeg"
-            photoAlt="Eternal Atake 2"
-            caption=" Paar In The Mars: My Favorite Song"
-          />
-        </div>
-      </div>
     </div>
   );
 }

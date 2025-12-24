@@ -13,7 +13,7 @@ export const projectPreviews: ProjectPreview[] = [
   {
     details: projectDetails[0],
     description:
-      "The number on platform for exploring haunted locations. Explore over 10,000 locations across the United States, share spooky stories, and compete to visit the most haunted locations.",
+      "The number one platform for exploring haunted locations. Explore over 10,000 locations across the United States, share spooky stories, and compete to visit the most haunted locations.",
     screenshot: "/cryptid-coordinates/preview1.png",
     learnMoreHREF: "/projects/cryptid-coordinates",
     screenshotWidth: 175,
@@ -29,7 +29,7 @@ export const projectPreviews: ProjectPreview[] = [
   {
     details: projectDetails[2],
     description:
-      "Command line interfercae for automating the converting of audio files, tagging them with metadata, and uploading to Apple Music.",
+      "Command line interface for automating the converting of audio files, tagging them with metadata, and uploading to Apple Music.",
     learnMoreHREF: "/projects/music-tagger",
     screenshot: "/music-tagger/demo.jpg",
     screenshotWidth: 300,
