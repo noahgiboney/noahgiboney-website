@@ -77,7 +77,7 @@ function AboutMeSection() {
   return (
     <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
       <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 px-5">
-        About me
+        About Me
       </h2>
       <Card>
         <CardContent className="flex flex-col sm:flex-row sm:justify-around items-center gap-6 py-5">
