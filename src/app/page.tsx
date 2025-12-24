@@ -61,11 +61,11 @@ function NameSection() {
         </div>
         <div className={styles.imageContainer}>
           <Image
-            src="/profilepicture1.png"
+            src="/profile.png"
             alt="Noah Giboney"
             className={styles.image}
-            width={300}
-            height={300}
+            width={280}
+            height={280}
           />
         </div>
       </div>

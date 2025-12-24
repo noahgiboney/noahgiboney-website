@@ -10,8 +10,8 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "NG",
-  description: "Noah Giboney's Website",
+  title: "Noah Giboney Website",
+  description: "Personal website by Noah Giboney",
   icons: {
     icon: "/profilepicture1.png",
   },
