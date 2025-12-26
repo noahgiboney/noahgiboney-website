@@ -8,15 +8,17 @@ export type SocialLink = {
   label: IconType;
 };
 
-const links: SocialLink[] = [
-  {
-    href: "https://www.linkedin.com/in/noah-giboney-896847261/",
-    label: FaLinkedin,
-  },
-  { href: "https://github.com/noahgiboney", label: FaGithub },
-  // { href: "https://www.instagram.com", label: FaInstagram },
-  // { href: "https://x.com", label: FaXTwitter },
-  { href: "/contact", label: MdEmail },
-];
+export const getSocialLinks = (currentPath: string): SocialLink[] => {
+  const allLinks: SocialLink[] = [
+    { href: "https://github.com/noahgiboney", label: FaGithub },
+    {
+      href: "https://www.linkedin.com/in/noah-giboney-896847261/",
+      label: FaLinkedin,
+    },
+    { href: "https://www.instagram.com/noahgiboney", label: FaInstagram },
+    { href: "https://x.com/noahgiboney", label: FaXTwitter },
+    { href: "/contact", label: MdEmail },
+  ];
 
-export default links;
+  return allLinks.filter(link => link.href !== '/contact' || currentPath !== '/contact');
+};

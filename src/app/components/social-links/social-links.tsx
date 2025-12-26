@@ -1,9 +1,13 @@
 import Link from "next/link";
 import styles from "./social-links.module.css";
-import links from "@/model/social-links";
+import { getSocialLinks} from "@/model/social-links";
 import { SocialLink } from "@/model/social-links";
+import { usePathname } from 'next/navigation'
 
 export default function SocialLinks() {
+  const pathname = usePathname();
+  const links = getSocialLinks(pathname);
+
   return (
     <div className={styles.links}>
       {links.map((link, index) => (
