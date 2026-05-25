@@ -20,8 +20,8 @@ export default function ProjectPreviewCard({
   screenshotWidth,
 }: ProjectPreview) {
   return (
-    <Card className="w-full flex flex-col md:flex-row">
-      <div className="w-full md:w-1/2 flex flex-col space-y-4 p-4">
+    <Card className="metallic-surface flex w-full flex-col rounded-[2rem] md:min-h-[31rem] md:flex-row">
+      <div className="flex w-full flex-col space-y-4 p-4 md:w-1/2">
         <CardHeader>
           <CardTitle className="text-2xl md:text-3xl flex items-center space-x-4">
             <Image
@@ -47,19 +47,19 @@ export default function ProjectPreviewCard({
         <CardContent className="flex flex-col items-start space-y-4 text-left">
           <p className="text-gray-800">{description}</p>
         </CardContent>
-        <CardFooter className="justify-center md:justify-start">
+        <CardFooter className="mt-auto justify-center md:justify-start">
           <Link href={learnMoreHREF}>
             <StaticMetallicButton>Learn More</StaticMetallicButton>
           </Link>
         </CardFooter>
       </div>
-      <div className="w-full md:w-1/2 flex justify-center pb-2">
+      <div className="flex w-full items-center justify-center px-5 pb-6 md:min-h-[31rem] md:w-1/2 md:px-8">
         <Image
           src={screenshot}
           alt={`${details.title} screenshot`}
           width={screenshotWidth}
           height={400}
-          className="object-contain"
+          className="max-h-[430px] w-auto object-contain"
         />
       </div>
     </Card>

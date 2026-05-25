@@ -36,13 +36,13 @@ export default function Home() {
 
 function NameSection() {
   return (
-    <Card>
+    <Card className="metallic-surface rounded-[2rem]">
       <div className={styles.cardContent}>
         <div className={styles.textContent}>
           <CardHeader>
             <CardTitle className="text-5xl sm:text-7xl">Noah Giboney</CardTitle>
             <CardDescription className="text-xl">
-              <div className={styles.location}>
+              <div className={`${styles.location} text-slate-700`}>
                 <MdLocationPin />
                 HTX & LA
               </div>
@@ -75,13 +75,13 @@ function NameSection() {
 function AboutMeSection() {
   return (
     <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
-      <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 px-5">
+      <h2 className="px-5 text-2xl font-bold text-gray-800 sm:text-4xl">
         About Me
       </h2>
-      <Card>
+      <Card className="rounded-[2rem] border-zinc-200/90 shadow-xl shadow-zinc-200/50">
         <CardContent className="flex flex-col sm:flex-row sm:justify-around items-center gap-6 py-5">
           <div className="flex items-center gap-3 w-full sm:flex-1">
-            <div className="flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200">
+            <div className="flex-shrink-0 rounded-lg border border-gray-200 bg-white shadow-sm">
               <Link
                 href="https://www.calpoly.edu/major/computer-science"
                 target="_blank"
@@ -90,7 +90,7 @@ function AboutMeSection() {
                 <Image
                   src={"/slo-logo.svg"}
                   alt="Cal Poly logo"
-                  className="w-[70px] h-[70px] py-1 shadow-md"
+                  className="h-[70px] w-[70px] py-1 shadow-md"
                   width={70}
                   height={70}
                 />
@@ -105,7 +105,7 @@ function AboutMeSection() {
             </div>
           </div>
           <div className="flex items-center gap-3 w-full sm:flex-1">
-            <div className="flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200">
+            <div className="flex-shrink-0 rounded-lg border border-gray-200 bg-white shadow-sm">
               <Link
                 href="https://www.hpe.com/us/en/greenlake.html?utm_campaign=FY25_CD_GB_GD_AMS_NA_Simplify_Hybrid_Cloud_management&utm_medium=PS&utm_source=GG&utm_content=521124404&plid=PSF-00000449&ef_id=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE:G:s&s_kwcid=AL!13472!3!!!!x!!!22034838876!&gad_source=1&gad_campaignid=22050296106&gbraid=0AAAAACRP5IA5IDKzAzwcUrD5Uk8ULhrr_&gclid=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE"
                 target="_blank"
@@ -114,7 +114,7 @@ function AboutMeSection() {
                 <Image
                   src={"/work/hpe.svg"}
                   alt="HPE Logo"
-                  className="w-[70px] h-[70px] px-2 shadow-md"
+                  className="h-[70px] w-[70px] px-2 shadow-md"
                   width={70}
                   height={70}
                 />
@@ -131,7 +131,7 @@ function AboutMeSection() {
             </div>
           </div>
           <div className="flex items-center gap-3 w-full sm:flex-1">
-            <div className="flex-shrink-0 w-[79px] h-[79px] rounded-lg overflow-hidden shadow-md">
+            <div className="h-[79px] w-[79px] flex-shrink-0 overflow-hidden rounded-lg shadow-md">
               <Link
                 href={
                   "https://www.youtube.com/watch?v=juoznBaQbJE&list=PLC-tfB9OwTFHdk7GnG1CAoxUr4rbV2rci"
@@ -144,7 +144,7 @@ function AboutMeSection() {
                   alt="Eternal Atake cover art"
                   width={79}
                   height={79}
-                  className="object-cover w-full h-full"
+                  className="h-full w-full object-cover"
                 />
               </Link>
             </div>
@@ -199,7 +199,7 @@ function ProjectsSection() {
           href="https://apps.apple.com/us/developer/noah-giboney/id1732186750"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center space-x-3 hover:text-gray-500 origin-center"
+          className="flex w-fit items-center space-x-3 text-slate-700 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-slate-900"
         >
           <FaAppStoreIos className="text-3xl transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out" />
           <p className="text-xl font-medium">6000+ App Store Downloads</p>

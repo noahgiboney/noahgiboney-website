@@ -136,14 +136,15 @@ export default function ContactPage() {
       </div>
       <form
         ref={formRef}
-        className={styles.textFields}
+        className={`${styles.textFields} metallic-surface rounded-[2rem] px-6 py-8 md:px-10`}
         onSubmit={handleSubmit}
         noValidate
       >
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name" className="font-medium text-slate-700">Name</label>
         <Input
           id="name"
           name="name"
+          className="bg-white"
           value={formData.name}
           placeholder="Name"
           autoComplete="name"
@@ -159,11 +160,12 @@ export default function ContactPage() {
           </p>
         ) : null}
 
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email" className="font-medium text-slate-700">Email</label>
         <Input
           id="email"
           name="email"
           type="email"
+          className="bg-white"
           value={formData.email}
           placeholder="Email"
           autoComplete="email"
@@ -179,10 +181,11 @@ export default function ContactPage() {
           </p>
         ) : null}
 
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message" className="font-medium text-slate-700">Message</label>
         <Textarea
           id="message"
           name="message"
+          className="bg-white"
           value={formData.message}
           placeholder="Type your message here "
           aria-invalid={Boolean(errors.message)}
