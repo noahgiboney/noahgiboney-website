@@ -1,29 +1,40 @@
-import Link from "next/link";
-import styles from "./social-links.module.css";
-import { getSocialLinks} from "@/model/social-links";
-import { SocialLink } from "@/model/social-links";
-import { usePathname } from 'next/navigation'
+import Link from 'next/link';
 
-export default function SocialLinks() {
-  const pathname = usePathname();
-  const links = getSocialLinks(pathname);
+import { getSocialLinks, type SocialLink } from '@/model/social-links';
+
+import styles from './social-links.module.css';
+
+interface SocialLinksProps {
+  hideContactLink?: boolean;
+}
+
+export default function SocialLinks({
+  hideContactLink = false,
+}: SocialLinksProps) {
+  const links = getSocialLinks({ hideContactLink });
 
   return (
     <div className={styles.links}>
-      {links.map((link, index) => (
-        <SocialLinkItem key={index} link={link} />
+      {links.map((link) => (
+        <SocialLinkItem key={link.href} link={link} />
       ))}
     </div>
   );
 }
 
-export function SocialLinkItem({ link }: { link: SocialLink }) {
-  const Icon = link.label;
+interface SocialLinkItemProps {
+  link: SocialLink;
+}
+
+export function SocialLinkItem({ link }: SocialLinkItemProps) {
+  const Icon = link.icon;
+
   return (
     <Link
       href={link.href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={link.isExternal ? '_blank' : undefined}
+      rel={link.isExternal ? 'noopener noreferrer' : undefined}
+      aria-label={link.ariaLabel}
       className={styles.link}
     >
       <Icon className="w-6 h-6" />

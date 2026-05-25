@@ -1,10 +1,17 @@
-import styles from './pagebody.module.css'
+import type { ReactNode } from 'react';
 
-export default function PageBody({children, title} : {children: React.ReactNode, title: string}) {
-    return (
-        <div className={styles.page}>
-            <h1 className='text-5xl'>{title}</h1>
-            {children}
-        </div>
-    )
+import styles from './pagebody.module.css';
+
+interface PageBodyProps {
+  children: ReactNode;
+  title: string;
+}
+
+export default function PageBody({ children, title }: PageBodyProps) {
+  return (
+    <div className={styles.page}>
+      <h1 className="text-5xl">{title}</h1>
+      {children}
+    </div>
+  );
 }

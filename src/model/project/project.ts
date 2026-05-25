@@ -1,16 +1,17 @@
-import { ProjectDetails, projectDetails } from "./project-details";
+import { projectDetails, type ProjectDetails } from './project-details';
 
-export type Project = {
+export interface Project {
   details: ProjectDetails;
   intro: string;
   sections: ProjectSection[];
   appstoreHREF?: string;
-};
+}
 
-export type ProjectSection = {
+export interface ProjectSection {
+  id: string;
   title: string;
   content: string;
-};
+}
 
 export const projects: Project[] = [
   {
@@ -21,11 +22,13 @@ export const projects: Project[] = [
       "https://apps.apple.com/us/app/reality-market/id6478195420",
     sections: [
       {
+        id: "augmented-reality",
         title: "Augmented Reality",
         content:
           "What makes the Reality Market unique is the incorperation of augmented reality within the shopping and selling experience. Users are able to scan their items into 3D models. This was made possbile by utalizing the object capture sample project provided made by apple. This flow returns a 3D Model in USDZ format, which then gets sent to storage. In order to scan an item, users will need to have a phone with LiDAR hardware. This is found only on pro models of the iPhone. Shoppers are also to view items in AR, in their own space. This is made possible by using apples quick look preivew view.",
       },
       {
+        id: "using-vapor",
         title: "Using Vapor",
         content:
           "Using vapor to build the apps backend was a great experince. Using swift on the front-end and the sever was a great experience and I felt it kept the codebases very consistent and clean. I also used the Fluent ORM to interact with the postgres database. ",
@@ -39,16 +42,19 @@ export const projects: Project[] = [
     appstoreHREF: "https://apps.apple.com/us/app/cryptid-coordinates/id6478195420",
     sections: [
       {
+        id: "architecture",
         title: "Architecture",
         content:
           "The app leverages SwiftData for efficient location querying. On first load, location data is decoded from a JSON file, converted to SwiftData models, and inserted into the model context, enabling fast location-based and text searches. Firebase Auth with Apple ID simplifies user onboarding, exclusive to iOS.",
       },
       {
+        id: "map-integration",
         title: "Map Integration",
         content:
           "MapKit provides an immersive interface for browsing haunted locations as map markers around the user's real-time location. To optimize performance with high marker volumes, the ClusterMap package is used for efficient rendering. Geohashes are computed to create geographical boxes for clustering and reloading annotations when the map camera moves.",
       },
       {
+        id: "features",
         title: "Features",
         content:
           "Users can browse over ten thousand haunted locations with detailed information and user-submitted stories. The app supports tracking visited locations, competing on leaderboards, and exploring nearby haunted spots via location-based search. An interactive map enhances visual exploration, and users can request new locations to expand the database.",
@@ -61,14 +67,17 @@ export const projects: Project[] = [
       "Command line interfercae for automating the converting of audio files, tagging them with metadata, and uploading to apple music. For usage and source code checkout out the github repository linked above.",
     sections: [
       {
+        id: "motivation",
         title: "Motivation",
         content: "Uploading local files iTunes/Apple Music with custom metadata can take a great amount of time. I built Music Tagger to speed up this proccess by setting audio file metadata in bulk and exporting to iTunes for the files to upload to my cloud library."
       },
       {
+        id: "how-it-works",
         title: "How It Works",
         content: "Music Tagger is designed to process a set of closely relate files in bulk via a folder on your local machine. For example songs from the same album. It uses the Swift ArgumentParser to pass options to the program, and then converts all audio files to M4A (Apples Audio Format), using the AVFoundation framework. Metadata is set as specified then the song is moved to your local iTunes library. Files of course are proccesed in parallel using modern Swift conurrency. Files should be in M4A in order to get the explicit song label. See the README within the github repository for more information on usage and CLI options."
       },
       {
+        id: "limitations",
         title: "Limitations",
         content: "One of the current limitations of the tool is it requires manual observation to verify that the files have succesfully uploaded to your iTunes library. From what I have seen this is usually about a 95% success rate, however I will sometimes have uploaded procceses crash after the Music Tagger runs, which then would require a re-run."
       },
@@ -81,11 +90,13 @@ export const projects: Project[] = [
     appstoreHREF: "https://apps.apple.com/us/app/asteroid-vision/id6480248381",
     sections: [
       {
+        id: "architecture",
         title: "Architecture",
         content:
           "I built this app following the MVVM pattern. I had an API service that was responsible for fetching the asteroids. For this service, I used URLSession and modern swift concurrency, using things like async await and group tasks. The API service fetched the JSON objects and returned it the viewmodel, which perfomred the buisness logic and provided the view the data for the user interface.",
       },
       {
+        id: "using-observation",
         title: "Using Observation",
         content:
           "Users can change their unit preference in the unit control center. This was handled by storing an observerable object in the environment and passing this a bindable to the control center, so that one source of truth is maintained. Users unit selection are also stored in UserDefaults.",

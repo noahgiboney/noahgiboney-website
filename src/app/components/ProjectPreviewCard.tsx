@@ -17,7 +17,7 @@ export default function ProjectPreviewCard({
   description,
   screenshot,
   learnMoreHREF,
-  screenshotWidth
+  screenshotWidth,
 }: ProjectPreview) {
   return (
     <Card className="w-full flex flex-col md:flex-row">
@@ -35,8 +35,8 @@ export default function ProjectPreviewCard({
               <p className="font-bold text-gray-800">{details.title}</p>
               <Separator />
               <div className="flex flex-wrap gap-2 pt-1">
-                {details.skills.map((skill, index) => (
-                  <Badge key={index} variant="secondary">
+                {details.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary">
                     {skill}
                   </Badge>
                 ))}
@@ -56,7 +56,7 @@ export default function ProjectPreviewCard({
       <div className="w-full md:w-1/2 flex justify-center pb-2">
         <Image
           src={screenshot}
-          alt="App Screenshot"
+          alt={`${details.title} screenshot`}
           width={screenshotWidth}
           height={400}
           className="object-contain"

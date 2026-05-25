@@ -1,7 +1,6 @@
 import { FaGithub } from "react-icons/fa";
-import { projectPreviews } from "@/model/project/project-preview"; // Adjust the import path
-import PageBody from "../components/pagebody/pagebody";
-import ProjectPreviewCard from "../components/ProjectPreviewCard"; // Adjust the import path
+import { projectPreviews } from "@/model/project/project-preview";
+import ProjectPreviewCard from "../components/ProjectPreviewCard";
 import Link from "next/link";
 import { FaAppStoreIos } from "react-icons/fa";
 
@@ -14,6 +13,7 @@ export default function ProjectsPage() {
           <Link
             href="https://github.com/noahgiboney"
             target="_blank"
+            rel="noopener noreferrer"
             className="transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out"
           >
             <FaGithub />
@@ -21,14 +21,15 @@ export default function ProjectsPage() {
           <Link
             href="https://apps.apple.com/us/developer/noah-giboney/id1732186750"
             target="_blank"
+            rel="noopener noreferrer"
             className="transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out"
           >
             <FaAppStoreIos />
           </Link>
         </div>
       </div>
-      {projectPreviews.map((project, index) => (
-        <ProjectPreviewCard key={index} {...project} />
+      {projectPreviews.map((project) => (
+        <ProjectPreviewCard key={project.details.slug} {...project} />
       ))}
     </div>
   );

@@ -1,19 +1,21 @@
-export type Screenshot = {
+export interface Screenshot {
   src: string;
   caption: string;
-};
+}
 
-export type ProjectDetails = {
+export interface ProjectDetails {
+  slug: string;
   title: string;
   appIconSrc: string;
   appIconTailwind: string;
   githubHREF?: string;
   skills: string[];
   screenshots: Screenshot[];
-};
+}
 
 export const projectDetails: ProjectDetails[] = [
   {
+    slug: "cryptid-coordinates",
     title: "Cryptid Coordinates",
     appIconSrc: "/cryptid-coordinates/ghostBlack.svg",
     appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md p-2",
@@ -46,6 +48,7 @@ export const projectDetails: ProjectDetails[] = [
     ],
   },
   {
+    slug: "reality-market",
     title: "Reality Market",
     appIconSrc: "/reality-market/reality-market-app-logo.svg",
     appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md",
@@ -74,6 +77,7 @@ export const projectDetails: ProjectDetails[] = [
     ],
   },
   {
+    slug: "music-tagger",
     title: "Music Tagger",
     appIconSrc: "/music-tagger/logo.png",
     appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover",
@@ -82,6 +86,7 @@ export const projectDetails: ProjectDetails[] = [
     screenshots: [],
   },
   {
+    slug: "asteroid-vision",
     title: "Asteroid Vision",
     appIconSrc: "/asteroid-vision/asteroid-vision-app-logo.png",
     appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md",

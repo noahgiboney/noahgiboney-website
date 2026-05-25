@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -86,6 +85,7 @@ function AboutMeSection() {
               <Link
                 href="https://www.calpoly.edu/major/computer-science"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <Image
                   src={"/slo-logo.svg"}
@@ -109,6 +109,7 @@ function AboutMeSection() {
               <Link
                 href="https://www.hpe.com/us/en/greenlake.html?utm_campaign=FY25_CD_GB_GD_AMS_NA_Simplify_Hybrid_Cloud_management&utm_medium=PS&utm_source=GG&utm_content=521124404&plid=PSF-00000449&ef_id=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE:G:s&s_kwcid=AL!13472!3!!!!x!!!22034838876!&gad_source=1&gad_campaignid=22050296106&gbraid=0AAAAACRP5IA5IDKzAzwcUrD5Uk8ULhrr_&gclid=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <Image
                   src={"/work/hpe.svg"}
@@ -136,6 +137,7 @@ function AboutMeSection() {
                   "https://www.youtube.com/watch?v=juoznBaQbJE&list=PLC-tfB9OwTFHdk7GnG1CAoxUr4rbV2rci"
                 }
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <Image
                   src="/ea.jpg"
@@ -162,14 +164,24 @@ function AboutMeSection() {
               <Separator />
             </div>
             <ul className="flex flex-wrap justify-start gap-4 list-none">
-              <Badge variant="secondary" className="text">
-                Soccer
-              </Badge>
-              <Badge variant="secondary">Systems Programming</Badge>
-              <Badge variant="secondary">iOS Development</Badge>
-              <Badge variant="secondary">Music</Badge>
-              <Badge variant="secondary">Fitness</Badge>
-              <Badge variant="secondary">Health</Badge>
+              <li>
+                <Badge variant="secondary">Soccer</Badge>
+              </li>
+              <li>
+                <Badge variant="secondary">Systems Programming</Badge>
+              </li>
+              <li>
+                <Badge variant="secondary">iOS Development</Badge>
+              </li>
+              <li>
+                <Badge variant="secondary">Music</Badge>
+              </li>
+              <li>
+                <Badge variant="secondary">Fitness</Badge>
+              </li>
+              <li>
+                <Badge variant="secondary">Health</Badge>
+              </li>
             </ul>
           </div>
         </CardFooter>
@@ -196,8 +208,8 @@ function ProjectsSection() {
 
       <Carousel>
         <CarouselContent>
-          {projectPreviews.map((project, index) => (
-            <CarouselItem key={index}>
+          {projectPreviews.map((project) => (
+            <CarouselItem key={project.details.slug}>
               <ProjectPreviewCard {...project} />
             </CarouselItem>
           ))}

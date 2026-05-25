@@ -1,13 +1,12 @@
-import { ProjectDetails } from "./project-details";
-import { projectDetails } from "./project-details";
+import { projectDetails, type ProjectDetails } from './project-details';
 
-export type ProjectPreview = {
+export interface ProjectPreview {
   details: ProjectDetails;
   description: string;
   screenshot: string;
   learnMoreHREF: string;
-  screenshotWidth: number
-};
+  screenshotWidth: number;
+}
 
 export const projectPreviews: ProjectPreview[] = [
   {
