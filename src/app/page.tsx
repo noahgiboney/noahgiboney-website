@@ -168,12 +168,6 @@ function AboutMeSection() {
                 <Badge variant="secondary">Soccer</Badge>
               </li>
               <li>
-                <Badge variant="secondary">Systems Programming</Badge>
-              </li>
-              <li>
-                <Badge variant="secondary">iOS Development</Badge>
-              </li>
-              <li>
                 <Badge variant="secondary">Music</Badge>
               </li>
               <li>
