@@ -50,8 +50,7 @@ function NameSection() {
           </CardHeader>
           <CardContent>
             <p>
-              Welcome to my website, my space to reflect on the journeys I have
-              taken, and those yet unseen.
+              Welcome to my website.
             </p>
           </CardContent>
           <CardFooter>
