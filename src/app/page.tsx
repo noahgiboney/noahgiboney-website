@@ -120,12 +120,12 @@ function AboutMeSection() {
               </Link>
             </div>
             <div className="min-w-0 flex-1 px-2">
-              <p className="font-bold text-lg">System Test Engineer</p>
+              <p className="font-bold text-lg">Software Engineer</p>
               <p className="text-sm text-gray-600">
                 Hewlett Packard Enterprise
               </p>
               <p className="text-sm text-gray-500 line-clamp-3">
-                System software test for high performance computing.
+                High Performance Computing: system test and integration.
               </p>
             </div>
           </div>
