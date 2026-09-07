@@ -2,31 +2,42 @@ import Link from 'next/link';
 
 import { getSocialLinks, type SocialLink } from '@/model/social-links';
 
-import styles from './social-links.module.css';
+type SocialLinksVariant = 'icon' | 'text';
 
 interface SocialLinksProps {
   hideContactLink?: boolean;
+  variant?: SocialLinksVariant;
 }
 
 export default function SocialLinks({
   hideContactLink = false,
+  variant = 'icon',
 }: SocialLinksProps) {
   const links = getSocialLinks({ hideContactLink });
 
   return (
-    <div className={styles.links}>
+    <ul
+      className={
+        variant === 'icon'
+          ? 'flex list-none flex-wrap items-center gap-2'
+          : 'flex list-none flex-wrap items-center gap-x-5 gap-y-2'
+      }
+    >
       {links.map((link) => (
-        <SocialLinkItem key={link.href} link={link} />
+        <li key={link.href}>
+          <SocialLinkItem link={link} variant={variant} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
 interface SocialLinkItemProps {
   link: SocialLink;
+  variant: SocialLinksVariant;
 }
 
-export function SocialLinkItem({ link }: SocialLinkItemProps) {
+function SocialLinkItem({ link, variant }: SocialLinkItemProps) {
   const Icon = link.icon;
 
   return (
@@ -34,10 +45,18 @@ export function SocialLinkItem({ link }: SocialLinkItemProps) {
       href={link.href}
       target={link.isExternal ? '_blank' : undefined}
       rel={link.isExternal ? 'noopener noreferrer' : undefined}
-      aria-label={link.ariaLabel}
-      className={styles.link}
+      aria-label={variant === 'icon' ? link.ariaLabel : undefined}
+      className={
+        variant === 'icon'
+          ? 'metallic-icon h-11 w-11'
+          : 'text-sm text-zinc-500 transition-colors hover:text-zinc-900'
+      }
     >
-      <Icon className="w-6 h-6" />
+      {variant === 'icon' ? (
+        <Icon className="h-[18px] w-[18px]" aria-hidden />
+      ) : (
+        link.label
+      )}
     </Link>
   );
 }

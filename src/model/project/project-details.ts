@@ -7,7 +7,8 @@ export interface ProjectDetails {
   slug: string;
   title: string;
   appIconSrc: string;
-  appIconTailwind: string;
+  /** Padding tuned per artwork: glyphs need room, full app icons fill the tile. */
+  iconClassName: string;
   githubHREF?: string;
   skills: string[];
   screenshots: Screenshot[];
@@ -18,7 +19,7 @@ export const projectDetails: ProjectDetails[] = [
     slug: "cryptid-coordinates",
     title: "Cryptid Coordinates",
     appIconSrc: "/cryptid-coordinates/ghostBlack.svg",
-    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md p-2",
+    iconClassName: "p-2",
     skills: ["SwiftUI", "SwiftData", "MapKit"],
     screenshots: [
       {
@@ -39,7 +40,7 @@ export const projectDetails: ProjectDetails[] = [
       },
       {
         src: "/cryptid-coordinates/preview5.png",
-        caption: "Compete on the leadeboard of visiting haunted locations",
+        caption: "Compete on the leaderboard of visiting haunted locations",
       },
       {
         src: "/cryptid-coordinates/preview6.png",
@@ -51,7 +52,7 @@ export const projectDetails: ProjectDetails[] = [
     slug: "reality-market",
     title: "Reality Market",
     appIconSrc: "/reality-market/reality-market-app-logo.svg",
-    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md",
+    iconClassName: "",
     skills: ["SwiftUI", "Vapor", "ARKit", "PostgreSQL"],
     screenshots: [
       {
@@ -68,7 +69,7 @@ export const projectDetails: ProjectDetails[] = [
       },
       {
         src: "/reality-market/preview4.png",
-        caption: "View listings details",
+        caption: "View listing details",
       },
       {
         src: "/reality-market/preview5.png",
@@ -80,7 +81,7 @@ export const projectDetails: ProjectDetails[] = [
     slug: "music-tagger",
     title: "Music Tagger",
     appIconSrc: "/music-tagger/logo.png",
-    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover",
+    iconClassName: "",
     skills: ["Swift", "AVFoundation"],
     githubHREF: "https://github.com/noahgiboney/music-tagger",
     screenshots: [],
@@ -89,7 +90,7 @@ export const projectDetails: ProjectDetails[] = [
     slug: "asteroid-vision",
     title: "Asteroid Vision",
     appIconSrc: "/asteroid-vision/asteroid-vision-app-logo.png",
-    appIconTailwind: "w-24 h-24 rounded-2xl flex justify-center items-center object-cover shadow-md",
+    iconClassName: "",
     githubHREF: "https://github.com/noahgiboney/asteroid-vision",
     skills: ["SwiftUI", "MVVM", "SceneKit"],
     screenshots: [

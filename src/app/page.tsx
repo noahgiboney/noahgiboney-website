@@ -1,215 +1,127 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./page.module.css";
-import SocialLinks from "./components/social-links/social-links";
-import { MdLocationPin } from "react-icons/md";
-import { FaAppStoreIos } from "react-icons/fa";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/app/components/ui/carousel";
-import { projectPreviews } from "../model/project/project-preview";
-import { Separator } from "@/app/components/ui/separator";
-import ProjectPreviewCard from "@/app/components/ProjectPreviewCard";
-import { Badge } from "@/app/components/ui/badge";
+import Image from 'next/image';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+import { FaAppStoreIos, FaGithub } from 'react-icons/fa';
+
+import ExperienceRow from './components/ExperienceRow';
+import ProjectRow from './components/ProjectRow';
+import SocialLinks from './components/social-links/social-links';
+import { educationItems, workItems } from '@/model/experience';
+import { projectPreviews } from '@/model/project/project-preview';
+
+const APP_STORE_HREF =
+  'https://apps.apple.com/us/developer/noah-giboney/id1732186750';
+const GITHUB_HREF = 'https://github.com/noahgiboney';
 
 export default function Home() {
   return (
-    <div className="my-10 flex flex-col mx-[7%] sm:mx-[15%] md:mx-[12%] space-y-14">
-      <NameSection />
-      <AboutMeSection />
-      <ProjectsSection />
+    <div className="mx-auto w-full max-w-3xl px-6 py-14 sm:py-20">
+      <Intro />
+      <Experience />
+      <Projects />
     </div>
   );
 }
 
-function NameSection() {
+function Intro() {
   return (
-    <Card className="metallic-surface rounded-[2rem]">
-      <div className={styles.cardContent}>
-        <div className={styles.textContent}>
-          <CardHeader>
-            <CardTitle className="text-5xl sm:text-7xl">Noah Giboney</CardTitle>
-            <CardDescription className="text-xl">
-              <div className={`${styles.location} text-slate-700`}>
-                <MdLocationPin />
-                HTX & LA
-              </div>
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p>
-              Welcome to my website.
-            </p>
-          </CardContent>
-          <CardFooter>
-            <SocialLinks />
-          </CardFooter>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            src="/profile.png"
-            alt="Noah Giboney"
-            className={styles.image}
-            width={280}
-            height={280}
-          />
+    <section className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between sm:gap-12">
+      <div className="flex-1">
+        <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
+          Noah Giboney
+        </h1>
+
+        <p className="mt-4 max-w-md text-[15px] leading-relaxed text-zinc-500">
+          Interested in high performance computing and iOS app development. Based in Houston and Los Angeles.
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <SocialLinks />
         </div>
       </div>
-    </Card>
+
+      <div className="shrink-0">
+        <Image
+          src="/profile.png"
+          alt="Noah Giboney"
+          width={2009}
+          height={2165}
+          priority
+          className="aspect-[2009/2165] w-40 rounded-2xl object-cover shadow-[0_1px_2px_rgba(24,24,27,0.06),0_18px_40px_-24px_rgba(24,24,27,0.45)] ring-1 ring-zinc-900/10 sm:w-56"
+        />
+      </div>
+    </section>
   );
 }
 
-function AboutMeSection() {
+function Experience() {
   return (
-    <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
-      <h2 className="px-5 text-2xl font-bold text-gray-800 sm:text-4xl">
-        About Me
-      </h2>
-      <Card className="rounded-[2rem] border-zinc-200/90 shadow-xl shadow-zinc-200/50">
-        <CardContent className="flex flex-col sm:flex-row sm:justify-around items-center gap-6 py-5">
-          <div className="flex items-center gap-3 w-full sm:flex-1">
-            <div className="flex-shrink-0 rounded-lg border border-gray-200 bg-white shadow-sm">
-              <Link
-                href="https://www.calpoly.edu/major/computer-science"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src={"/slo-logo.svg"}
-                  alt="Cal Poly logo"
-                  className="h-[70px] w-[70px] py-1 shadow-md"
-                  width={70}
-                  height={70}
-                />
-              </Link>
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="font-bold text-lg">B.S Computer Science</p>
-              <p className="text-sm text-gray-600">Cal Poly, San Luis Obispo</p>
-              <p className="text-sm text-gray-500 line-clamp-3">
-                Graduated class of 2025. Learn by doing.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 w-full sm:flex-1">
-            <div className="flex-shrink-0 rounded-lg border border-gray-200 bg-white shadow-sm">
-              <Link
-                href="https://www.hpe.com/us/en/greenlake.html?utm_campaign=FY25_CD_GB_GD_AMS_NA_Simplify_Hybrid_Cloud_management&utm_medium=PS&utm_source=GG&utm_content=521124404&plid=PSF-00000449&ef_id=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE:G:s&s_kwcid=AL!13472!3!!!!x!!!22034838876!&gad_source=1&gad_campaignid=22050296106&gbraid=0AAAAACRP5IA5IDKzAzwcUrD5Uk8ULhrr_&gclid=CjwKCAiAu67KBhAkEiwAY0jAlVkyaYnNaMZTCa1L0mfyrVGYhj_g5AsmF9EQO5z7hqrtnYUo4GEaIhoC2TUQAvD_BwE"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src={"/work/hpe.svg"}
-                  alt="HPE Logo"
-                  className="h-[70px] w-[70px] px-2 shadow-md"
-                  width={70}
-                  height={70}
-                />
-              </Link>
-            </div>
-            <div className="min-w-0 flex-1 px-2">
-              <p className="font-bold text-lg">Software Engineer</p>
-              <p className="text-sm text-gray-600">
-                Hewlett Packard Enterprise
-              </p>
-              <p className="text-sm text-gray-500 line-clamp-3">
-                High Performance Computing: system test and integration.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 w-full sm:flex-1">
-            <div className="h-[79px] w-[79px] flex-shrink-0 overflow-hidden rounded-lg shadow-md">
-              <Link
-                href={
-                  "https://www.youtube.com/watch?v=juoznBaQbJE&list=PLC-tfB9OwTFHdk7GnG1CAoxUr4rbV2rci"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/ea.jpg"
-                  alt="Eternal Atake cover art"
-                  width={79}
-                  height={79}
-                  className="h-full w-full object-cover"
-                />
-              </Link>
-            </div>
-            <div className="min-w-0 flex-1 px-2">
-              <p className="font-bold text-lg">Eternal Atake</p>
-              <p className="text-sm text-gray-600">Lil Uzi Vert</p>
-              <p className="text-sm text-gray-500 line-clamp-3">
-                My favorite album of all time.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-        <CardFooter>
-          <div className="flex flex-col items-start space-y-3 w-full">
-            <div className="flex flex-col">
-              <p className="text-lg">Interests</p>
-              <Separator />
-            </div>
-            <ul className="flex flex-wrap justify-start gap-4 list-none">
-              <li>
-                <Badge variant="secondary">Soccer</Badge>
-              </li>
-              <li>
-                <Badge variant="secondary">Music</Badge>
-              </li>
-              <li>
-                <Badge variant="secondary">Fitness</Badge>
-              </li>
-              <li>
-                <Badge variant="secondary">Health</Badge>
-              </li>
-            </ul>
-          </div>
-        </CardFooter>
-      </Card>
-    </div>
+    <Section title="Experience">
+      <div className="divide-y divide-[color:var(--hairline)]">
+        {workItems.map((item) => (
+          <ExperienceRow key={item.org} {...item} />
+        ))}
+        {educationItems.map((item) => (
+          <ExperienceRow key={item.org} {...item} />
+        ))}
+      </div>
+    </Section>
   );
 }
 
-function ProjectsSection() {
+function Projects() {
   return (
-    <div className="flex flex-col justify-start space-y-5 px-7 sm:px-0">
-      <div className="flex flex-col space-y-5 px-5">
-        <h2 className="text-4xl font-bold text-gray-800">Projects</h2>
+    <Section
+      title="Projects"
+      id="projects"
+      action={
         <Link
-          href="https://apps.apple.com/us/developer/noah-giboney/id1732186750"
+          href={GITHUB_HREF}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-fit items-center space-x-3 text-slate-700 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-slate-900"
+          aria-label="GitHub"
+          className="text-zinc-400 transition-colors hover:text-zinc-900"
         >
-          <FaAppStoreIos className="text-3xl transition-transform transform hover:scale-125 hover:rotate-12 hover:text-gray-500 duration-300 ease-in-out" />
-          <p className="text-xl font-medium">6000+ App Store Downloads</p>
+          <FaGithub className="h-4 w-4" aria-hidden />
         </Link>
+      }
+    >
+      <div className="divide-y divide-[color:var(--hairline)]">
+        {projectPreviews.map((project) => (
+          <ProjectRow key={project.details.slug} {...project} />
+        ))}
       </div>
 
-      <Carousel>
-        <CarouselContent>
-          {projectPreviews.map((project) => (
-            <CarouselItem key={project.details.slug}>
-              <ProjectPreviewCard {...project} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious variant="secondary" />
-        <CarouselNext variant="secondary" />
-      </Carousel>
-    </div>
+      <Link
+        href={APP_STORE_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-zinc-900"
+      >
+        <FaAppStoreIos className="h-4 w-4" aria-hidden />
+        6,000+ downloads on the App Store
+      </Link>
+    </Section>
+  );
+}
+
+interface SectionProps {
+  title: string;
+  id?: string;
+  action?: ReactNode;
+  children: ReactNode;
+}
+
+function Section({ title, id, action, children }: SectionProps) {
+  return (
+    <section id={id} className="mt-16 scroll-mt-24 sm:mt-20">
+      <div className="mb-2 flex items-center justify-between gap-4 border-b border-[color:var(--hairline)] pb-3">
+        <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
+          {title}
+        </h2>
+        {action}
+      </div>
+      {children}
+    </section>
   );
 }
