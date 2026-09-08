@@ -2,7 +2,8 @@ export interface ExperienceItem {
   org: string;
   role: string;
   dates: string;
-  url: string;
+  /** Omit for entries with nowhere to link out to; the row renders inert. */
+  url?: string;
   logo: string;
   /** Extra padding differs per logo artwork, so each entry tunes its own. */
   logoClassName?: string;
@@ -16,6 +17,13 @@ export const workItems: ExperienceItem[] = [
     url: 'https://www.hpe.com/us/en/home.html',
     logo: '/work/hpe.svg',
     logoClassName: 'p-2',
+  },
+  {
+    org: 'NMG Systems',
+    role: 'Founder',
+    dates: '2026 — Present',
+    logo: '/brand/nmg-mark-on-light.svg',
+    logoClassName: 'p-1.5',
   },
   {
     org: 'Purple Tie',

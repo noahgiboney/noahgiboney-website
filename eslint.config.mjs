@@ -11,6 +11,8 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      // Vendored brand handoff — reference material, not project source.
+      "design/**",
     ],
   },
 ];

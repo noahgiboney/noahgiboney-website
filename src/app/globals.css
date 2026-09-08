@@ -2,31 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * NMG Systems LLC — design tokens v1.0 (see design/BRAND_SPEC.md).
+ * The identity is dark-first; this site runs the light ground it specifies:
+ * Chalk page, deep accent trio, hairline borders, square panels.
+ */
 @layer base {
   :root {
-    --background: 40 20% 99%;
-    --foreground: 240 6% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 6% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 6% 10%;
-    --primary: 240 6% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 6% 10%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 330 81% 70%;
-    --accent-foreground: 240 6% 10%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 330 81% 70%;
-    --radius: 0.75rem;
+    /*
+     * Palette is stored as bare RGB channels so Tailwind can apply opacity
+     * modifiers (bg-carbon/5) to it; the named tokens below resolve them for
+     * hand-written CSS. Channels and hex are the same values either way.
+     */
 
-    /* Hairline used for the thin rules that separate sections. */
-    --hairline: rgba(24, 24, 27, 0.09);
+    /* Brand accents — bright set (#7C7CFF / #4DA6FF / #58E0B8) */
+    --nmg-iris-rgb: 124 124 255;
+    --nmg-azure-rgb: 77 166 255;
+    --nmg-mint-rgb: 88 224 184;
+
+    /* Brand accents — deep set (#5A5AEB / #1F8CE8 / #17B98D) */
+    --nmg-iris-deep-rgb: 90 90 235;
+    --nmg-azure-deep-rgb: 31 140 232;
+    --nmg-mint-deep-rgb: 23 185 141;
+
+    /* Neutrals — Carbon #0E0F12, Surface #14161A, Chalk #F3F3F1 */
+    --nmg-carbon-rgb: 14 15 18;
+    --nmg-surface-rgb: 20 22 26;
+    --nmg-chalk-rgb: 243 243 241;
+
+    /* Ink scale for the light ground */
+    --nmg-ink-rgb: 14 15 18;
+    --nmg-body-rgb: 74 78 86;
+    --nmg-muted-rgb: 93 96 104;
+
+    --nmg-iris: rgb(var(--nmg-iris-rgb));
+    --nmg-azure: rgb(var(--nmg-azure-rgb));
+    --nmg-mint: rgb(var(--nmg-mint-rgb));
+    --nmg-iris-deep: rgb(var(--nmg-iris-deep-rgb));
+    --nmg-azure-deep: rgb(var(--nmg-azure-deep-rgb));
+    --nmg-mint-deep: rgb(var(--nmg-mint-deep-rgb));
+    --nmg-carbon: rgb(var(--nmg-carbon-rgb));
+    --nmg-surface: rgb(var(--nmg-surface-rgb));
+    --nmg-chalk: rgb(var(--nmg-chalk-rgb));
+    --nmg-ink: rgb(var(--nmg-ink-rgb));
+    --nmg-body: rgb(var(--nmg-body-rgb));
+    --nmg-muted: rgb(var(--nmg-muted-rgb));
+
+    /* Semantic. Iris is the only accent that appears in the interface. */
+    --nmg-accent: var(--nmg-iris-deep);
+    --nmg-accent-hover: var(--nmg-azure-deep);
+    --nmg-accent-ink: var(--nmg-carbon); /* text ON an Iris fill — never white */
+
+    /* Hairlines. Carbon at low alpha so 1px rules stay quiet on Chalk. */
+    --hairline: rgb(var(--nmg-carbon-rgb) / 0.11);
+    --hairline-strong: rgb(var(--nmg-carbon-rgb) / 0.16);
+
+    /* Radius — buttons 7px, cards square */
+    --nmg-radius-button: 7px;
+    --nmg-radius-card: 0px;
+
+    /* shadcn surface tokens, retuned to the brand palette */
+    --background: 60 8% 95%;
+    --foreground: 225 13% 6%;
+    --card: 0 0% 100%;
+    --card-foreground: 225 13% 6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 13% 6%;
+    --primary: 225 13% 6%;
+    --primary-foreground: 60 8% 95%;
+    --secondary: 60 6% 92%;
+    --secondary-foreground: 225 13% 6%;
+    --muted: 60 6% 92%;
+    --muted-foreground: 222 5% 39%;
+    --accent: 240 78% 64%;
+    --accent-foreground: 225 13% 6%;
+    --destructive: 0 65% 42%;
+    --destructive-foreground: 60 8% 95%;
+    --border: 225 10% 88%;
+    --input: 225 10% 84%;
+    --ring: 240 78% 64%;
+    --radius: 7px;
   }
 }
 
@@ -40,99 +95,205 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-ink antialiased;
+    font-family: var(--font-archivo), system-ui, sans-serif;
+  }
+
+  /* Focus ring — spec §6. Deep Iris so it clears 3:1 against Chalk. */
+  :focus-visible {
+    outline: 2px solid var(--nmg-accent);
+    outline-offset: 2px;
   }
 
   ::selection {
-    background: rgba(244, 114, 182, 0.22);
+    background: rgb(var(--nmg-iris-deep-rgb) / 0.18);
   }
 }
 
 @layer components {
-  /* Thin brushed-metal surface, kept subtle so it reads as paper, not chrome. */
-  .metallic-surface {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(161, 161, 170, 0.35);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.98) 0%,
-      rgba(250, 250, 249, 0.98) 45%,
-      rgba(244, 244, 245, 0.96) 100%
-    );
-    box-shadow:
-      0 1px 2px rgba(24, 24, 27, 0.04),
-      0 12px 32px -18px rgba(24, 24, 27, 0.22),
-      inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  /* Eyebrow — JetBrains Mono 11px / 0.22em, spec §3 */
+  .nmg-eyebrow {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--nmg-muted);
   }
 
-  .metallic-surface > * {
-    position: relative;
-    z-index: 1;
+  /* Label / meta — JetBrains Mono 10–11px / 0.10–0.14em, spec §3 */
+  .nmg-label {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 0.12em;
+    color: var(--nmg-muted);
   }
 
-  .metallic-pill {
-    border: 1px solid rgba(161, 161, 170, 0.4);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.98) 0%,
-      rgba(244, 244, 245, 0.97) 100%
-    );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.95),
-      0 1px 2px rgba(24, 24, 27, 0.05);
+  /* Long-form body copy — IBM Plex Sans, spec §3 */
+  .nmg-prose {
+    font-family: var(--font-plex), system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--nmg-body);
   }
 
-  .metallic-input {
-    border-color: rgba(161, 161, 170, 0.45);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.99) 0%,
-      rgba(250, 250, 249, 0.98) 100%
-    );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.96),
-      0 1px 2px rgba(24, 24, 27, 0.04);
+  /* Panels — square, hairline, no shadow. Spec §4: do not round the cards. */
+  .nmg-panel {
+    background: hsl(var(--card));
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--nmg-radius-card);
   }
 
-  .metallic-input:focus-visible {
-    border-color: rgba(244, 114, 182, 0.5);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.96),
-      0 0 0 3px rgba(244, 114, 182, 0.14);
-  }
-
-  /* Icon buttons (social links, nav affordances). */
-  .metallic-icon {
+  /* Buttons — radius 7px, padding 13px 24px, Archivo 600 15px. Spec §4. */
+  .nmg-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 9999px;
-    border: 1px solid rgba(161, 161, 170, 0.4);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.98) 0%,
-      rgba(244, 244, 245, 0.97) 100%
-    );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.95),
-      0 1px 2px rgba(24, 24, 27, 0.05);
-    color: rgb(82, 82, 91);
+    gap: 8px;
+    padding: 13px 24px;
+    border-radius: var(--nmg-radius-button);
+    font-family: var(--font-archivo), system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
     transition:
-      transform 200ms ease,
-      color 200ms ease,
-      box-shadow 200ms ease;
+      background-color 150ms ease-out,
+      border-color 150ms ease-out,
+      color 150ms ease-out,
+      transform 220ms ease-out,
+      box-shadow 220ms ease-out;
   }
 
-  .metallic-icon:hover {
-    transform: translateY(-2px);
-    color: rgb(24, 24, 27);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.95),
-      0 6px 16px -6px rgba(244, 114, 182, 0.55);
+  /* A small lift on hover, spec §5's 220ms transform allowance — settles
+     back down on press so the button still reads as clicked. */
+  .nmg-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .nmg-button:active {
+    transform: translateY(0);
+    transition-duration: 80ms;
+  }
+
+  /*
+   * Primary sits on Carbon with Chalk text rather than the spec's Iris fill
+   * (§4): a single saturated button dominated this page, and Chalk-on-Carbon
+   * clears AA comfortably where white-on-Iris would not. Iris still owns the
+   * interaction — the fill shifts to deep Iris on hover.
+   */
+  .nmg-button-primary {
+    background: var(--nmg-ink);
+    color: var(--nmg-chalk);
+  }
+
+  .nmg-button-primary:hover {
+    background: var(--nmg-accent);
+    box-shadow: 0 6px 16px -6px rgb(var(--nmg-carbon-rgb) / 0.35);
+  }
+
+  .nmg-button-secondary {
+    background: transparent;
+    border: 1px solid var(--hairline-strong);
+    color: var(--nmg-ink);
+  }
+
+  .nmg-button-secondary:hover {
+    border-color: var(--nmg-ink);
+    box-shadow: 0 4px 12px -6px rgb(var(--nmg-carbon-rgb) / 0.2);
+  }
+
+  .nmg-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Square icon tile — replaces the old rounded metallic pill. */
+  .nmg-tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--card));
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--nmg-radius-card);
+    transition: border-color 150ms ease-out;
+  }
+
+  /* Icon button — square, hairline, Iris on hover. */
+  .nmg-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--nmg-radius-card);
+    color: var(--nmg-muted);
+    transition:
+      color 150ms ease-out,
+      border-color 150ms ease-out;
+  }
+
+  .nmg-icon-button:hover {
+    color: var(--nmg-accent);
+    border-color: var(--nmg-accent);
+  }
+
+  .nmg-field {
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--nmg-radius-button);
+    background: hsl(var(--card));
+    font-family: var(--font-archivo), system-ui, sans-serif;
+    transition:
+      border-color 150ms ease-out,
+      box-shadow 150ms ease-out;
+  }
+
+  .nmg-field:focus-visible {
+    outline: none;
+    border-color: var(--nmg-accent);
+    box-shadow: 0 0 0 3px rgb(var(--nmg-iris-deep-rgb) / 0.16);
+  }
+
+  /* List rows — a whisper of Carbon on hover, nothing more. */
+  .nmg-row {
+    transition: background-color 150ms ease-out;
+  }
+
+  .nmg-row:hover {
+    background: rgb(var(--nmg-carbon-rgb) / 0.03);
   }
 
   .hairline {
     border-color: var(--hairline);
+  }
+}
+
+/*
+ * Spec §5: the only permitted logo animation — the three circles fade in
+ * staggered 60ms apart on first load. Nothing else moves.
+ */
+@keyframes nmg-dot-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nmg-dot {
+  animation: nmg-dot-in 220ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .nmg-dot {
+    animation: none;
   }
 }

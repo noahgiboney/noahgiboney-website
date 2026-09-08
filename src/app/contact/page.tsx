@@ -132,17 +132,18 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-xl px-6 py-14 sm:py-20">
-      <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+    <div className="mx-auto w-full max-w-xl px-nmg-4 py-nmg-6 sm:px-nmg-5 sm:py-20">
+      <p className="nmg-eyebrow">Get in touch</p>
+      <h1 className="mt-nmg-2 font-display text-[30px] font-bold tracking-h1 text-ink sm:text-[38px] sm:tracking-display">
         Contact
       </h1>
-      <p className="mt-3 text-[15px] leading-relaxed text-zinc-500">
+      <p className="nmg-prose mt-nmg-2">
         Have a question, an idea, or just want to say hello? Send me a note.
       </p>
 
       <form
         ref={formRef}
-        className="mt-10 flex flex-col gap-6"
+        className="mt-nmg-5 flex flex-col gap-nmg-4"
         onSubmit={handleSubmit}
         noValidate
       >
@@ -191,11 +192,11 @@ export default function ContactPage() {
           />
         </Field>
 
-        <div className="mt-2 flex flex-col items-center gap-4">
+        <div className="mt-nmg-1 flex flex-col items-start gap-nmg-2">
           <button
             type="submit"
             disabled={submissionState.isSubmitting}
-            className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-8 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50"
+            className="nmg-button nmg-button-primary"
           >
             {submissionState.isSubmitting ? 'Sending…' : 'Send message'}
           </button>
@@ -205,8 +206,8 @@ export default function ContactPage() {
               role={submissionState.statusType === 'error' ? 'alert' : 'status'}
               className={
                 submissionState.statusType === 'error'
-                  ? 'text-sm text-red-600'
-                  : 'text-sm text-emerald-700'
+                  ? 'text-[15px] text-destructive'
+                  : 'text-[15px] text-mint-deep'
               }
             >
               {submissionState.statusMessage}
@@ -215,10 +216,8 @@ export default function ContactPage() {
         </div>
       </form>
 
-      <div className="mt-12 border-t border-[color:var(--hairline)] pt-6">
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
-          Elsewhere
-        </p>
+      <div className="mt-nmg-6 border-t border-[color:var(--hairline)] pt-nmg-4">
+        <p className="nmg-eyebrow mb-nmg-2">Elsewhere</p>
         <SocialLinks hideContactLink />
       </div>
     </div>
@@ -234,13 +233,20 @@ interface FieldProps {
 
 function Field({ id, label, error, children }: FieldProps) {
   return (
-    <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-sm font-medium text-zinc-700">
+    <div className="flex flex-col gap-nmg-1">
+      <label
+        htmlFor={id}
+        className="nmg-label text-[10px] uppercase text-ink-muted"
+      >
         {label}
       </label>
       {children}
       {error ? (
-        <p id={`${id}-error`} role="alert" className="text-sm text-red-600">
+        <p
+          id={`${id}-error`}
+          role="alert"
+          className="text-[15px] text-destructive"
+        >
           {error}
         </p>
       ) : null}

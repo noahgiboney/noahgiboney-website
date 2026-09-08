@@ -6,9 +6,10 @@ export interface Screenshot {
 export interface ProjectDetails {
   slug: string;
   title: string;
-  appIconSrc: string;
+  /** Omit to run the project detail page without an icon (e.g. Music Tagger). */
+  appIconSrc?: string;
   /** Padding tuned per artwork: glyphs need room, full app icons fill the tile. */
-  iconClassName: string;
+  iconClassName?: string;
   githubHREF?: string;
   skills: string[];
   screenshots: Screenshot[];
@@ -80,8 +81,6 @@ export const projectDetails: ProjectDetails[] = [
   {
     slug: "music-tagger",
     title: "Music Tagger",
-    appIconSrc: "/music-tagger/logo.png",
-    iconClassName: "",
     skills: ["Swift", "AVFoundation"],
     githubHREF: "https://github.com/noahgiboney/music-tagger",
     screenshots: [],

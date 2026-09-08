@@ -19,8 +19,8 @@ export default function SocialLinks({
     <ul
       className={
         variant === 'icon'
-          ? 'flex list-none flex-wrap items-center gap-2'
-          : 'flex list-none flex-wrap items-center gap-x-5 gap-y-2'
+          ? 'flex list-none flex-wrap items-center gap-nmg-1'
+          : 'flex list-none flex-wrap items-center gap-x-nmg-4 gap-y-nmg-1'
       }
     >
       {links.map((link) => (
@@ -48,8 +48,8 @@ function SocialLinkItem({ link, variant }: SocialLinkItemProps) {
       aria-label={variant === 'icon' ? link.ariaLabel : undefined}
       className={
         variant === 'icon'
-          ? 'metallic-icon h-11 w-11'
-          : 'text-sm text-zinc-500 transition-colors hover:text-zinc-900'
+          ? 'nmg-icon-button h-11 w-11'
+          : 'text-[15px] text-ink-body transition-colors duration-150 hover:text-iris-deep'
       }
     >
       {variant === 'icon' ? (

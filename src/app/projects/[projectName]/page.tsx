@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FaAppStoreIos, FaGithub } from 'react-icons/fa';
 
-import StaticMetallicButton from '@/app/components/metallic-button/static-metallic-button';
 import YoutubeEmbed from '@/app/components/youtube-embed/youtube-embed';
 import {
   projects,
@@ -34,48 +33,48 @@ export default async function ProjectRoute({ params }: ProjectPageProps) {
 
 function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
   return (
-    <article className="mx-auto w-full max-w-3xl px-6 py-14 sm:py-20">
+    <article className="mx-auto w-full max-w-3xl px-nmg-4 py-nmg-6 sm:px-nmg-5 sm:py-20">
       <Link
         href="/#projects"
-        className="text-sm text-zinc-400 transition-colors hover:text-zinc-900"
+        className="nmg-label text-[10px] uppercase transition-colors duration-150 hover:text-iris-deep"
       >
         &larr; Portfolio
       </Link>
 
-      <header className="mt-8 flex items-center gap-4">
-        <span className="metallic-pill flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl">
-          <Image
-            src={details.appIconSrc}
-            alt=""
-            width={64}
-            height={64}
-            className={`h-full w-full object-contain ${details.iconClassName}`}
-          />
-        </span>
+      <header className="mt-nmg-5 flex items-center gap-nmg-2">
+        {details.appIconSrc ? (
+          <span className="nmg-tile h-16 w-16 shrink-0 overflow-hidden">
+            <Image
+              src={details.appIconSrc}
+              alt=""
+              width={64}
+              height={64}
+              className={`h-full w-full object-contain ${details.iconClassName ?? ''}`}
+            />
+          </span>
+        ) : null}
         <div className="min-w-0">
-          <h1 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+          <h1 className="font-display text-[30px] font-bold tracking-h1 text-ink sm:text-[38px] sm:tracking-display">
             {details.title}
           </h1>
-          <p className="mt-1 text-xs text-zinc-400">
+          <p className="nmg-label mt-1 text-[10px] uppercase">
             {details.skills.join(' · ')}
           </p>
         </div>
       </header>
 
-      <p className="mt-8 text-[15px] leading-relaxed text-zinc-600">{intro}</p>
+      <p className="nmg-prose mt-nmg-5">{intro}</p>
 
-      <div className="mt-8 flex flex-wrap items-center gap-5">
+      <div className="mt-nmg-5 flex flex-wrap items-center gap-nmg-2">
         {appstoreHREF ? (
           <Link
             href={appstoreHREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/link"
+            className="nmg-button nmg-button-primary"
           >
-            <StaticMetallicButton>
-              <FaAppStoreIos className="h-4 w-4" aria-hidden />
-              Download
-            </StaticMetallicButton>
+            <FaAppStoreIos className="h-4 w-4" aria-hidden />
+            Download
           </Link>
         ) : null}
 
@@ -85,7 +84,7 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${details.title} on GitHub`}
-            className="metallic-icon h-11 w-11"
+            className="nmg-icon-button h-11 w-11"
           >
             <FaGithub className="h-[18px] w-[18px]" aria-hidden />
           </Link>
@@ -93,15 +92,15 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
       </div>
 
       {details.slug === 'cryptid-coordinates' ? (
-        <div className="mt-12">
+        <div className="mt-nmg-6">
           <YoutubeEmbed embedId="bPAT3SDNc0g" />
         </div>
       ) : null}
 
       {details.screenshots.length > 0 ? (
-        <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3">
+        <div className="mt-nmg-6 grid grid-cols-2 gap-nmg-4 sm:grid-cols-3">
           {details.screenshots.map((screenshot) => (
-            <figure key={screenshot.src} className="flex flex-col gap-3">
+            <figure key={screenshot.src} className="flex flex-col gap-nmg-2">
               <Image
                 src={screenshot.src}
                 alt={screenshot.caption}
@@ -109,7 +108,7 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
                 height={780}
                 className="w-full object-contain"
               />
-              <figcaption className="text-xs leading-relaxed text-zinc-400">
+              <figcaption className="nmg-label">
                 {screenshot.caption}
               </figcaption>
             </figure>
@@ -117,7 +116,7 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
         </div>
       ) : null}
 
-      <div className="mt-16 flex flex-col gap-12">
+      <div className="mt-nmg-6 flex flex-col gap-nmg-6">
         {sections.map((section) => (
           <SectionCell key={section.id} {...section} />
         ))}
@@ -129,12 +128,10 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
 function SectionCell({ title, content }: ProjectSection) {
   return (
     <section>
-      <h2 className="border-b border-[color:var(--hairline)] pb-3 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
+      <h2 className="border-b border-[color:var(--hairline)] pb-nmg-2 font-display text-[22px] font-semibold tracking-h2 text-ink">
         {title}
       </h2>
-      <p className="mt-4 text-[15px] leading-relaxed text-zinc-600">
-        {content}
-      </p>
+      <p className="nmg-prose mt-nmg-3">{content}</p>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 
 import type { ExperienceItem } from '@/model/experience';
 
@@ -11,14 +12,9 @@ export default function ExperienceRow({
   logo,
   logoClassName,
 }: ExperienceItem) {
-  return (
-    <Link
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group -mx-3 flex items-center gap-4 rounded-xl px-3 py-4 transition-colors hover:bg-zinc-500/[0.04]"
-    >
-      <span className="metallic-pill flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
+  const body = (
+    <>
+      <span className="nmg-tile h-11 w-11 shrink-0 overflow-hidden">
         <Image
           src={logo}
           alt=""
@@ -29,15 +25,41 @@ export default function ExperienceRow({
       </span>
 
       <span className="min-w-0 flex-1">
-        <span className="block text-sm font-medium text-zinc-900">
-          {role}
-        </span>
-        <span className="block text-sm text-zinc-500">{org}</span>
+        <span className="block text-[15px] font-medium text-ink">{role}</span>
+        <span className="block text-[15px] text-ink-body">{org}</span>
       </span>
 
-      <span className="shrink-0 text-xs tabular-nums text-zinc-400 transition-colors group-hover:text-zinc-600">
+      <span className="nmg-label shrink-0 text-[10px] tabular-nums uppercase transition-colors duration-150 group-hover:text-iris-deep">
         {dates}
       </span>
+    </>
+  );
+
+  return <Row url={url}>{body}</Row>;
+}
+
+const ROW_CLASSES =
+  'group -mx-nmg-1 flex items-center gap-nmg-2 px-nmg-1 py-nmg-2';
+
+interface RowProps {
+  url?: string;
+  children: ReactNode;
+}
+
+/** Entries without a destination stay in the list but are not interactive. */
+function Row({ url, children }: RowProps) {
+  if (!url) {
+    return <div className={ROW_CLASSES}>{children}</div>;
+  }
+
+  return (
+    <Link
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`nmg-row ${ROW_CLASSES}`}
+    >
+      {children}
     </Link>
   );
 }

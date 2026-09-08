@@ -15,7 +15,7 @@ export const projectPreviews: ProjectPreview[] = [
   {
     details: projectDetails[1],
     summary:
-      'A marketplace where items are scanned into 3D models and previewed in augmented reality.',
+      'iOS app for scanning everyday items into 3D models, then listing and previewing them in augmented reality.',
   },
   {
     details: projectDetails[2],
@@ -25,7 +25,7 @@ export const projectPreviews: ProjectPreview[] = [
   {
     details: projectDetails[3],
     summary:
-      'Browse and filter near-earth asteroids with their history and orbital data.',
+      'iOS app for browsing and filtering near-earth asteroids with their history and orbital data.',
   },
 ];
 
