@@ -1,0 +1,50 @@
+/* NMG Systems LLC — design tokens v1.0 */
+:root {
+  /* Brand accents — bright set, for dark grounds */
+  --nmg-iris: #7C7CFF;
+  --nmg-azure: #4DA6FF;
+  --nmg-mint: #58E0B8;
+
+  /* Brand accents — deep set, for light grounds */
+  --nmg-iris-deep: #5A5AEB;
+  --nmg-azure-deep: #1F8CE8;
+  --nmg-mint-deep: #17B98D;
+
+  /* Neutrals */
+  --nmg-carbon: #0E0F12;   /* page background (dark theme) */
+  --nmg-surface: #14161A;  /* raised card background */
+  --nmg-border: #22242A;   /* hairline borders */
+  --nmg-chalk: #F3F3F1;    /* primary text on dark / page bg on light */
+  --nmg-body: #B9BDC4;     /* body copy on dark */
+  --nmg-muted: #8B9099;    /* labels, captions, meta */
+
+  /* Semantic */
+  --nmg-accent: var(--nmg-iris);
+  --nmg-accent-ink: var(--nmg-carbon); /* text ON an iris fill — never white */
+  --nmg-link: var(--nmg-iris);
+  --nmg-link-hover: var(--nmg-azure);
+
+  /* Type */
+  --nmg-font-display: "Archivo", system-ui, sans-serif;
+  --nmg-font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --nmg-font-body: "IBM Plex Sans", system-ui, sans-serif;
+
+  --nmg-track-wordmark: 0.04em;
+  --nmg-track-label: 0.14em;
+  --nmg-track-eyebrow: 0.30em;
+  --nmg-track-h1: -0.035em;
+  --nmg-track-h2: -0.02em;
+
+  /* Radius */
+  --nmg-radius-button: 7px;
+  --nmg-radius-card: 0px;      /* cards are square — hairline border only */
+  --nmg-radius-icon: 22.5%;    /* app icon corner, proportional */
+
+  /* Spacing scale (px) */
+  --nmg-space-1: 7px;
+  --nmg-space-2: 14px;
+  --nmg-space-3: 20px;
+  --nmg-space-4: 28px;
+  --nmg-space-5: 40px;
+  --nmg-space-6: 64px;
+}
