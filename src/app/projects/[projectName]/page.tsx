@@ -39,7 +39,7 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
         href="/#projects"
         className="text-sm text-zinc-400 transition-colors hover:text-zinc-900"
       >
-        &larr; Projects
+        &larr; Portfolio
       </Link>
 
       <header className="mt-8 flex items-center gap-4">

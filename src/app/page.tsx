@@ -40,7 +40,7 @@ function Intro() {
         </div>
       </div>
 
-      <div className="shrink-0">
+      <div className="shrink-0 self-center sm:self-auto">
         <Image
           src="/profile.png"
           alt="Noah Giboney"
@@ -72,7 +72,7 @@ function Experience() {
 function Projects() {
   return (
     <Section
-      title="Projects"
+      title="Portfolio"
       id="projects"
       action={
         <Link
