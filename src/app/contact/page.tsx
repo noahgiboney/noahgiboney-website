@@ -2,7 +2,6 @@
 
 import { type FormEvent, type ReactNode, useRef, useState } from 'react';
 
-import MetallicButton from '../components/metallic-button/metallic-button';
 import SocialLinks from '../components/social-links/social-links';
 import { Input } from '@/app/components/ui/input';
 import { Textarea } from '@/app/components/ui/textarea';
@@ -192,10 +191,14 @@ export default function ContactPage() {
           />
         </Field>
 
-        <div className="flex flex-wrap items-center gap-4">
-          <MetallicButton type="submit" disabled={submissionState.isSubmitting}>
-            {submissionState.isSubmitting ? 'Sending…' : 'Send'}
-          </MetallicButton>
+        <div className="mt-2 flex flex-col items-center gap-4">
+          <button
+            type="submit"
+            disabled={submissionState.isSubmitting}
+            className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-8 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {submissionState.isSubmitting ? 'Sending…' : 'Send message'}
+          </button>
 
           {submissionState.statusMessage ? (
             <p
