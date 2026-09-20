@@ -14,27 +14,27 @@ export interface ProjectSection {
 }
 
 export const projects: Project[] = [
-  {
-    details: projectDetails[1],
-    intro:
-      "For my senior capstone project at Cal Poly, I built the Reality Market. The goal was to create a unique marketplace while learning and applying good software development practices along the way. Reality Market lets users transform everyday items into detailed 3D models, which can then be listed on the marketplace. Sellers can manage their listings by editing, deleting, or organizing them into categories, and buyers can save their favorite listings for later. The main shopping feed offers robust search, sorting, and filters so users can find exactly what they're looking for.",
-    appstoreHREF:
-      "https://apps.apple.com/us/app/reality-market/id6478195420",
-    sections: [
-      {
-        id: "augmented-reality",
-        title: "Augmented Reality",
-        content:
-          "What makes Reality Market unique is the use of augmented reality throughout the shopping and selling experience. Users can scan their items into 3D models, made possible by building on Apple's Object Capture sample project. This flow returns a 3D model in USDZ format, which then gets sent to storage. Scanning an item requires a phone with LiDAR hardware, found only on Pro models of the iPhone. Shoppers can also view items in AR in their own space, using Apple's Quick Look preview.",
-      },
-      {
-        id: "using-vapor",
-        title: "Using Vapor",
-        content:
-          "Building the app's backend with Vapor was a great experience. Using Swift on both the front end and the server kept the codebases consistent and clean. I also used the Fluent ORM to interact with the Postgres database.",
-      },
-    ],
-  },
+  // {
+  //   details: projectDetails[1],
+  //   intro:
+  //     "For my senior capstone project at Cal Poly, I built the Reality Market. The goal was to create a unique marketplace while learning and applying good software development practices along the way. Reality Market lets users transform everyday items into detailed 3D models, which can then be listed on the marketplace. Sellers can manage their listings by editing, deleting, or organizing them into categories, and buyers can save their favorite listings for later. The main shopping feed offers robust search, sorting, and filters so users can find exactly what they're looking for.",
+  //   appstoreHREF:
+  //     "https://apps.apple.com/us/app/reality-market/id6478195420",
+  //   sections: [
+  //     {
+  //       id: "augmented-reality",
+  //       title: "Augmented Reality",
+  //       content:
+  //         "What makes Reality Market unique is the use of augmented reality throughout the shopping and selling experience. Users can scan their items into 3D models, made possible by building on Apple's Object Capture sample project. This flow returns a 3D model in USDZ format, which then gets sent to storage. Scanning an item requires a phone with LiDAR hardware, found only on Pro models of the iPhone. Shoppers can also view items in AR in their own space, using Apple's Quick Look preview.",
+  //     },
+  //     {
+  //       id: "using-vapor",
+  //       title: "Using Vapor",
+  //       content:
+  //         "Building the app's backend with Vapor was a great experience. Using Swift on both the front end and the server kept the codebases consistent and clean. I also used the Fluent ORM to interact with the Postgres database.",
+  //     },
+  //   ],
+  // },
   {
     details: projectDetails[0],
     intro:
