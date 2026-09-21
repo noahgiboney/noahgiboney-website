@@ -49,6 +49,7 @@ export const projectDetails: ProjectDetails[] = [
       },
     ],
   },
+  // Reality Market commented out - see project.ts and project-preview.ts
   // {
   //   slug: "reality-market",
   //   title: "Reality Market",

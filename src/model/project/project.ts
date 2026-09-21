@@ -14,6 +14,7 @@ export interface ProjectSection {
 }
 
 export const projects: Project[] = [
+  // Reality Market commented out - see project-details.ts
   // {
   //   details: projectDetails[1],
   //   intro:
@@ -62,7 +63,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    details: projectDetails[2],
+    details: projectDetails[1],
     intro:
       "A command line interface for automating the conversion of audio files, tagging them with metadata, and uploading them to Apple Music. See the GitHub repository linked above for usage and source code.",
     sections: [
@@ -84,7 +85,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    details: projectDetails[3],
+    details: projectDetails[2],
     intro:
       "Asteroid Vision is an iOS app to browse and filter near-earth asteroids, made possible by NASA's NEO Objects REST API. Users can explore orbital data and build a list of favorites.",
     appstoreHREF: "https://apps.apple.com/us/app/asteroid-vision/id6480248381",
