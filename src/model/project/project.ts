@@ -124,12 +124,6 @@ export const projects: Project[] = [
         content:
           "Echoes use Apple's Foundation Models framework to write stories entirely on device, with no server and no cost per story. The model generates into a @Generable type with guided fields for the title and story, and the text streams in as it's written. Each narrative voice has its own instructions, so the same location reads differently as a campfire tale or a case file.",
       },
-      {
-        id: "community-safety",
-        title: "Community Safety",
-        content:
-          "Comments and usernames run through a content filter that catches profanity, slurs and the usual disguises like look-alike characters and stretched letters, while still allowing the words a haunted location app needs. Users can report comments they find objectionable and block other users, which hides that user's comments from them.",
-      },
     ],
   },
   {
