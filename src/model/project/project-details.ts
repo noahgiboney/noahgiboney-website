@@ -17,34 +17,34 @@ export interface ProjectDetails {
 
 export const projectDetails: ProjectDetails[] = [
   {
-    slug: "cryptid-coordinates",
-    title: "Cryptid Coordinates",
-    appIconSrc: "/cryptid-coordinates/ghostBlack.svg",
+    slug: "afterdark",
+    title: "Afterdark",
+    appIconSrc: "/afterdark/ghostBlack.svg",
     iconClassName: "p-2",
     skills: ["SwiftUI", "SwiftData", "MapKit"],
     screenshots: [
       {
-        src: "/cryptid-coordinates/preview1.png",
+        src: "/afterdark/preview1.png",
         caption: "Explore haunted locations",
       },
       {
-        src: "/cryptid-coordinates/preview2.png",
+        src: "/afterdark/preview2.png",
         caption: "Share experiences",
       },
       {
-        src: "/cryptid-coordinates/preview3.png",
+        src: "/afterdark/preview3.png",
         caption: "View locations on the map",
       },
       {
-        src: "/cryptid-coordinates/preview4.png",
+        src: "/afterdark/preview4.png",
         caption: "Visit locations to detect paranormal activity",
       },
       {
-        src: "/cryptid-coordinates/preview5.png",
+        src: "/afterdark/preview5.png",
         caption: "Compete on the leaderboard of visiting haunted locations",
       },
       {
-        src: "/cryptid-coordinates/preview6.png",
+        src: "/afterdark/preview6.png",
         caption: "Add new locations",
       },
     ],

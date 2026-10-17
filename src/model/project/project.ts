@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     details: projectDetails[0],
     intro:
-      "Cryptid Coordinates is an iOS app for exploring haunted locations across the United States. Discover over ten thousand haunted spots, track your visits, compete on leaderboards, and share your paranormal experiences.",
+      "Afterdark is an iOS app for exploring haunted locations across the United States. Discover over ten thousand haunted spots, track your visits, compete on leaderboards, and share your paranormal experiences.",
     appstoreHREF: "https://apps.apple.com/us/app/cryptid-coordinates/id6478195420",
     sections: [
       {

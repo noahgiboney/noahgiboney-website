@@ -91,7 +91,7 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
         ) : null}
       </div>
 
-      {details.slug === 'cryptid-coordinates' ? (
+      {details.slug === 'afterdark' ? (
         <div className="mt-nmg-6">
           <YoutubeEmbed embedId="bPAT3SDNc0g" />
         </div>
