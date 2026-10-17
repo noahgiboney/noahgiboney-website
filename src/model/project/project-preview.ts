@@ -10,7 +10,7 @@ export const projectPreviews: ProjectPreview[] = [
   {
     details: projectDetails[0],
     summary:
-      'iOS app for exploring over 10,000 haunted locations across the United States.',
+      'iOS app for exploring over 10,500 haunted places across the globe.',
   },
   {
     details: projectDetails[1],
