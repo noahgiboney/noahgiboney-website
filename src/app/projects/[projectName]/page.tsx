@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { FaAppStoreIos, FaGithub } from 'react-icons/fa';
 
-import YoutubeEmbed from '@/app/components/youtube-embed/youtube-embed';
 import {
   projects,
   type Project,
@@ -90,12 +89,6 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
           </Link>
         ) : null}
       </div>
-
-      {details.slug === 'afterdark' ? (
-        <div className="mt-nmg-6">
-          <YoutubeEmbed embedId="bPAT3SDNc0g" />
-        </div>
-      ) : null}
 
       {details.screenshots.length > 0 ? (
         <div className="mt-nmg-6 grid grid-cols-2 gap-nmg-4 sm:grid-cols-3">
