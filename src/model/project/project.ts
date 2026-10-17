@@ -104,13 +104,13 @@ export const projects: Project[] = [
         id: "location-data",
         title: "Location Data",
         content:
-          "Locations live in Supabase and are mirrored on device with SwiftData, so search, Near You and the map all read from a local store and keep working offline. The first launch pages through the whole table by id, and every launch after that only fetches rows edited or deleted since the last sync. The sync watermark is taken from the newest row actually read rather than the device clock, so clock skew can never skip a change.",
+          "Locations live in a remote backend and are mirrored on device with SwiftData, so search, Near You and the map all read from a local store and keep working offline. The first launch pages through the whole table by id, and every launch after that only fetches rows edited or deleted since the last sync. The sync watermark is taken from the newest row actually read rather than the device clock, so clock skew can never skip a change.",
       },
       {
         id: "haunted-notifications",
         title: "Haunted Notifications",
         content:
-          "iOS only lets an app watch twenty regions at a time, so Afterdark uses CLMonitor to geofence the twenty closest locations the user hasn't been notified about, and re-picks them as the user moves. When the user crosses into one, iOS relaunches the app in the background to send the notification. Each location only notifies once, with a cooldown between alerts, and the notified list syncs through Supabase so a reinstall doesn't repeat them.",
+          "iOS only lets an app watch twenty regions at a time, so Afterdark uses CLMonitor to geofence the twenty closest locations the user hasn't been notified about, and re-picks them as the user moves. When the user crosses into one, iOS relaunches the app in the background to send the notification. Each location only notifies once, with a cooldown between alerts, and the notified list syncs with the remote backend so a reinstall doesn't repeat them.",
       },
       {
         id: "road-trips",
