@@ -13,6 +13,8 @@ export interface ProjectDetails {
   githubHREF?: string;
   skills: string[];
   screenshots: Screenshot[];
+  /** Wrap raw app captures in a CSS phone frame; leave off for pre-framed art. */
+  deviceFrame?: boolean;
 }
 
 export const projectDetails: ProjectDetails[] = [
@@ -22,31 +24,17 @@ export const projectDetails: ProjectDetails[] = [
     appIconSrc: "/afterdark/ghostBlack.svg",
     iconClassName: "p-2",
     skills: ["SwiftUI", "SwiftData", "MapKit"],
+    deviceFrame: true,
     screenshots: [
+      { src: "/afterdark/01-map.png", caption: "Haunted locations on the map" },
+      { src: "/afterdark/02-story.png", caption: "Read the story behind each haunt" },
+      { src: "/afterdark/03-explore.png", caption: "Explore nearby and new locations" },
       {
-        src: "/afterdark/preview1.png",
-        caption: "Explore haunted locations",
+        src: "/afterdark/04-haunted-notifications.png",
+        caption: "Get notified near a haunted location",
       },
-      {
-        src: "/afterdark/preview2.png",
-        caption: "Share experiences",
-      },
-      {
-        src: "/afterdark/preview3.png",
-        caption: "View locations on the map",
-      },
-      {
-        src: "/afterdark/preview4.png",
-        caption: "Visit locations to detect paranormal activity",
-      },
-      {
-        src: "/afterdark/preview5.png",
-        caption: "Compete on the leaderboard of visiting haunted locations",
-      },
-      {
-        src: "/afterdark/preview6.png",
-        caption: "Add new locations",
-      },
+      { src: "/afterdark/05-road-trip.png", caption: "Plan haunted road trips" },
+      { src: "/afterdark/06-social.png", caption: "Climb the community leaderboards" },
     ],
   },
   // Reality Market commented out - see project.ts and project-preview.ts

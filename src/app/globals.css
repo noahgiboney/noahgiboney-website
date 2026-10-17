@@ -132,6 +132,28 @@
     color: var(--nmg-muted);
   }
 
+  /*
+   * Phone frame for raw app captures. Sizes are in cqw (the figure's width)
+   * so the bezel and corner radius scale with the grid column.
+   */
+  .nmg-device {
+    container-type: inline-size;
+  }
+
+  .nmg-device-frame {
+    padding: 2.6cqw;
+    border-radius: 15.5cqw;
+    background: var(--nmg-carbon);
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / 0.1),
+      0 0 0 1px var(--hairline-strong);
+  }
+
+  .nmg-device-screen {
+    display: block;
+    border-radius: 12.9cqw;
+  }
+
   /* Long-form body copy — IBM Plex Sans, spec §3 */
   .nmg-prose {
     font-family: var(--font-plex), system-ui, sans-serif;

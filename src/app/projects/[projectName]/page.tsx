@@ -93,15 +93,30 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
       {details.screenshots.length > 0 ? (
         <div className="mt-nmg-6 grid grid-cols-2 gap-nmg-4 sm:grid-cols-3">
           {details.screenshots.map((screenshot) => (
-            <figure key={screenshot.src} className="flex flex-col gap-nmg-2">
-              <Image
-                src={screenshot.src}
-                alt={screenshot.caption}
-                width={360}
-                height={780}
-                className="w-full object-contain"
-              />
-              <figcaption className="nmg-label">
+            <figure
+              key={screenshot.src}
+              className={`flex flex-col gap-nmg-2 ${details.deviceFrame ? 'nmg-device' : ''}`}
+            >
+              {details.deviceFrame ? (
+                <div className="nmg-device-frame">
+                  <Image
+                    src={screenshot.src}
+                    alt={screenshot.caption}
+                    width={360}
+                    height={782}
+                    className="nmg-device-screen w-full"
+                  />
+                </div>
+              ) : (
+                <Image
+                  src={screenshot.src}
+                  alt={screenshot.caption}
+                  width={360}
+                  height={780}
+                  className="w-full object-contain"
+                />
+              )}
+              <figcaption className="nmg-label text-center">
                 {screenshot.caption}
               </figcaption>
             </figure>
