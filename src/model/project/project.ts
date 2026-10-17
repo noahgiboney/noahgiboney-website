@@ -47,7 +47,7 @@ export const projects: Project[] = [
     details: projectDetails[0],
     intro:
       "Afterdark is an iOS app for finding the haunted places around you. Browse over ten thousand haunted locations across the United States, get a notification when you drive past one, plan a road trip through the spookiest stops nearby, and hear each location's story told back to you by an on-device AI.",
-    appstoreHREF: "https://apps.apple.com/us/app/cryptid-coordinates/id6478195420",
+    appstoreHREF: "https://apps.apple.com/us/app/afterdark-haunted-places/id6478195420",
     features: [
       {
         title: "Haunted Map",
