@@ -23,7 +23,7 @@ export const projectDetails: ProjectDetails[] = [
     title: "Afterdark",
     appIconSrc: "/afterdark/ghostBlack.svg",
     iconClassName: "p-2",
-    skills: ["SwiftUI", "SwiftData", "MapKit"],
+    skills: ["SwiftUI", "SwiftData", "Foundation Models", "Supabase"],
     deviceFrame: true,
     screenshots: [
       { src: "/afterdark/01-map.png", caption: "Haunted locations on the map" },

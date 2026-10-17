@@ -3,8 +3,15 @@ import { projectDetails, type ProjectDetails } from './project-details';
 export interface Project {
   details: ProjectDetails;
   intro: string;
+  /** Short feature list shown right under the screenshots. */
+  features?: ProjectFeature[];
   sections: ProjectSection[];
   appstoreHREF?: string;
+}
+
+export interface ProjectFeature {
+  title: string;
+  description: string;
 }
 
 export interface ProjectSection {
@@ -39,26 +46,89 @@ export const projects: Project[] = [
   {
     details: projectDetails[0],
     intro:
-      "Afterdark is an iOS app for exploring haunted locations across the United States. Discover over ten thousand haunted spots, track your visits, compete on leaderboards, and share your paranormal experiences.",
+      "Afterdark is an iOS app for finding the haunted places around you. Browse over ten thousand haunted locations across the United States, get a notification when you drive past one, plan a road trip through the spookiest stops nearby, and hear each location's story told back to you by an on-device AI.",
     appstoreHREF: "https://apps.apple.com/us/app/cryptid-coordinates/id6478195420",
+    features: [
+      {
+        title: "Haunted Map",
+        description:
+          "Every haunted location on one map, with photo pins that cluster and shrink as you zoom out.",
+      },
+      {
+        title: "Haunted Notifications",
+        description:
+          "A heads-up when you come within a mile of a haunted location, even with the app closed.",
+      },
+      {
+        title: "Haunted Road Trips",
+        description:
+          "Pick up to ten stops and Afterdark orders them into the shortest drive, with driving directions between each.",
+      },
+      {
+        title: "Echoes",
+        description:
+          "A short horror story inspired by a location's lore, written on device in one of four voices: Explorer, Campfire, Lost Journal or Case File.",
+      },
+      {
+        title: "Visits",
+        description:
+          "Check in when you're actually at a location to build your visit history.",
+      },
+      {
+        title: "Leaderboards",
+        description:
+          "Compete with the community on most visits and most locations added.",
+      },
+      {
+        title: "Community Stories",
+        description:
+          "Comment with your own experiences, and see what's trending across the app.",
+      },
+      {
+        title: "Add Locations",
+        description:
+          "Submit a haunted location with a photo, and it joins the map once it's reviewed.",
+      },
+      {
+        title: "Saved Locations",
+        description: "Bookmark the places you want to visit next.",
+      },
+      {
+        title: "Afterdark+",
+        description:
+          "A monthly, yearly or lifetime upgrade that unlocks every location, notifications, road trips and Echoes.",
+      },
+    ],
     sections: [
       {
-        id: "architecture",
-        title: "Architecture",
+        id: "location-data",
+        title: "Location Data",
         content:
-          "The app leverages SwiftData for efficient location querying. On first load, location data is decoded from a JSON file, converted to SwiftData models, and inserted into the model context, enabling fast location-based and text searches. Firebase Auth with Apple ID simplifies onboarding, exclusive to iOS.",
+          "Locations live in Supabase and are mirrored on device with SwiftData, so search, Near You and the map all read from a local store and keep working offline. The first launch pages through the whole table by id, and every launch after that only fetches rows edited or deleted since the last sync. The sync watermark is taken from the newest row actually read rather than the device clock, so clock skew can never skip a change.",
       },
       {
-        id: "map-integration",
-        title: "Map Integration",
+        id: "haunted-notifications",
+        title: "Haunted Notifications",
         content:
-          "MapKit provides an immersive interface for browsing haunted locations as map markers around the user's real-time location. To keep performance smooth with a high volume of markers, the ClusterMap package handles efficient rendering. Geohashes are computed to create geographic boxes for clustering and reloading annotations as the map camera moves.",
+          "iOS only lets an app watch twenty regions at a time, so Afterdark uses CLMonitor to geofence the twenty closest locations the user hasn't been notified about, and re-picks them as the user moves. When the user crosses into one, iOS relaunches the app in the background to send the notification. Each location only notifies once, with a cooldown between alerts, and the notified list syncs through Supabase so a reinstall doesn't repeat them.",
       },
       {
-        id: "features",
-        title: "Features",
+        id: "road-trips",
+        title: "Road Trips",
         content:
-          "Users can browse over ten thousand haunted locations with detailed information and user-submitted stories. The app supports tracking visited locations, competing on leaderboards, and exploring nearby haunted spots via location-based search. An interactive map enhances visual exploration, and users can request new locations to expand the database.",
+          "Stops are ordered without any network requests: a nearest neighbor pass builds a route from straight-line distances, then 2-opt reverses any stretch where the route doubles back on itself. Driving directions for each leg are then requested from MapKit together, and a leg that fails falls back to a straight line so the rest of the trip still shows.",
+      },
+      {
+        id: "echoes",
+        title: "Echoes",
+        content:
+          "Echoes use Apple's Foundation Models framework to write stories entirely on device, with no server and no cost per story. The model generates into a @Generable type with guided fields for the title and story, and the text streams in as it's written. Each narrative voice has its own instructions, so the same location reads differently as a campfire tale or a case file.",
+      },
+      {
+        id: "community-safety",
+        title: "Community Safety",
+        content:
+          "Comments and usernames run through a content filter that catches profanity, slurs and the usual disguises like look-alike characters and stretched letters, while still allowing the words a haunted location app needs. Users can report comments they find objectionable and block other users, which hides that user's comments from them.",
       },
     ],
   },

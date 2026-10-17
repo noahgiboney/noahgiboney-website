@@ -6,6 +6,7 @@ import { FaAppStoreIos, FaGithub } from 'react-icons/fa';
 import {
   projects,
   type Project,
+  type ProjectFeature,
   type ProjectSection,
 } from '@/model/project/project';
 
@@ -30,7 +31,13 @@ export default async function ProjectRoute({ params }: ProjectPageProps) {
   return <ProjectPage {...project} />;
 }
 
-function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
+function ProjectPage({
+  details,
+  intro,
+  features,
+  sections,
+  appstoreHREF,
+}: Project) {
   return (
     <article className="mx-auto w-full max-w-3xl px-nmg-4 py-nmg-6 sm:px-nmg-5 sm:py-20">
       <Link
@@ -124,12 +131,36 @@ function ProjectPage({ details, intro, sections, appstoreHREF }: Project) {
         </div>
       ) : null}
 
+      {features && features.length > 0 ? (
+        <section className="mt-nmg-6">
+          <h2 className="border-b border-[color:var(--hairline)] pb-nmg-2 font-display text-[22px] font-semibold tracking-h2 text-ink">
+            Features
+          </h2>
+          <ul className="mt-nmg-3 grid gap-x-nmg-5 gap-y-nmg-4 sm:grid-cols-2">
+            {features.map((feature) => (
+              <FeatureCell key={feature.title} {...feature} />
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       <div className="mt-nmg-6 flex flex-col gap-nmg-6">
         {sections.map((section) => (
           <SectionCell key={section.id} {...section} />
         ))}
       </div>
     </article>
+  );
+}
+
+function FeatureCell({ title, description }: ProjectFeature) {
+  return (
+    <li>
+      <h3 className="font-display text-[16px] font-semibold text-ink">
+        {title}
+      </h3>
+      <p className="nmg-prose mt-1 text-[15px]">{description}</p>
+    </li>
   );
 }
 
