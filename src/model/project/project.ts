@@ -7,6 +7,7 @@ export interface Project {
   features?: ProjectFeature[];
   sections: ProjectSection[];
   appstoreHREF?: string;
+  websiteHREF?: string;
 }
 
 export interface ProjectFeature {
@@ -48,6 +49,7 @@ export const projects: Project[] = [
     intro:
       "Afterdark is an iOS app for finding the haunted places around you. Browse over 10,500 haunted places across the globe, get a notification when you drive past one, plan a road trip through the spookiest stops nearby, and hear each location's story told back to you by an on-device AI.",
     appstoreHREF: "https://apps.apple.com/us/app/afterdark-haunted-places/id6478195420",
+    websiteHREF: "https://afterdark-app.vercel.app",
     features: [
       {
         title: "Haunted Map",

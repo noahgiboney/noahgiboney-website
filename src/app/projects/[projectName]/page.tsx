@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { FaAppStoreIos, FaGithub } from 'react-icons/fa';
+import { FaAppStoreIos, FaGithub, FaGlobe } from 'react-icons/fa';
 
 import {
   projects,
@@ -37,6 +37,7 @@ function ProjectPage({
   features,
   sections,
   appstoreHREF,
+  websiteHREF,
 }: Project) {
   return (
     <article className="mx-auto w-full max-w-3xl px-nmg-4 py-nmg-6 sm:px-nmg-5 sm:py-20">
@@ -81,6 +82,18 @@ function ProjectPage({
           >
             <FaAppStoreIos className="h-4 w-4" aria-hidden />
             Download
+          </Link>
+        ) : null}
+
+        {websiteHREF ? (
+          <Link
+            href={websiteHREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nmg-button nmg-button-secondary"
+          >
+            <FaGlobe className="h-4 w-4" aria-hidden />
+            Website
           </Link>
         ) : null}
 
