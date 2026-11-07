@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -9,6 +10,7 @@ import {
   type ProjectFeature,
   type ProjectSection,
 } from '@/model/project/project';
+import { projectPreviews } from '@/model/project/project-preview';
 
 interface ProjectPageProps {
   params: Promise<{ projectName: string }>;
@@ -16,6 +18,49 @@ interface ProjectPageProps {
 
 export function generateStaticParams() {
   return projects.map((project) => ({ projectName: project.details.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { projectName } = await params;
+  const project = projects.find(
+    (currentProject) => currentProject.details.slug === projectName
+  );
+
+  if (!project) {
+    return { title: 'Page not found' };
+  }
+
+  const { title, slug } = project.details;
+  const preview = projectPreviews.find(
+    (currentPreview) => currentPreview.details.slug === slug
+  );
+  // Listed projects use their one-line summary; unlisted ones fall back to
+  // the intro's first sentence and are kept out of search results.
+  const description = preview?.summary ?? `${project.intro.split('. ')[0]}.`;
+  const url = `/projects/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    robots: preview ? undefined : { index: false, follow: false },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'NMG Systems LLC',
+      type: 'website',
+      images: [{ url: '/brand/og-card.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/brand/og-card.png'],
+    },
+  };
 }
 
 export default async function ProjectRoute({ params }: ProjectPageProps) {

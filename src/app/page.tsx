@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -12,6 +13,10 @@ import { projectPreviews } from '@/model/project/project-preview';
 const APP_STORE_HREF =
   'https://apps.apple.com/us/developer/noah-giboney/id1732186750';
 const GITHUB_HREF = 'https://github.com/noahgiboney';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function Home() {
   return (
@@ -37,7 +42,10 @@ function Intro() {
         </p>
 
         <div className="mt-nmg-5 flex flex-wrap items-center gap-nmg-2">
-          <SocialLinks />
+          <Link href="/contact" className="nmg-button nmg-button-primary">
+            Get in touch
+          </Link>
+          <SocialLinks hideContactLink />
         </div>
       </div>
 
