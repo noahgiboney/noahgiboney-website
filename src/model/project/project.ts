@@ -8,6 +8,8 @@ export interface Project {
   sections: ProjectSection[];
   appstoreHREF?: string;
   websiteHREF?: string;
+  /** Keep the content but don't serve a page for it (the URL returns 404). */
+  hidden?: boolean;
 }
 
 export interface ProjectFeature {
@@ -46,6 +48,8 @@ export const projects: Project[] = [
   // },
   {
     details: projectDetails[0],
+    // The home page links straight to the Afterdark website instead.
+    hidden: true,
     intro:
       "Afterdark is an iOS app for finding the haunted places around you. Browse over 10,500 haunted places across the globe, get a notification when you drive past one, plan a road trip through the spookiest stops nearby, and hear each location's story told back to you by an on-device AI.",
     appstoreHREF: "https://apps.apple.com/us/app/afterdark-haunted-places/id6478195420",
@@ -171,3 +175,6 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+/** Projects that have a page on this site. */
+export const visibleProjects = projects.filter((project) => !project.hidden);

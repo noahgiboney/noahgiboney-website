@@ -4,6 +4,8 @@ export interface ProjectPreview {
   details: ProjectDetails;
   /** One line, written to fit on a single row of the home page list. */
   summary: string;
+  /** Link out to this URL instead of the project's page on this site. */
+  externalHREF?: string;
 }
 
 export const projectPreviews: ProjectPreview[] = [
@@ -11,6 +13,7 @@ export const projectPreviews: ProjectPreview[] = [
     details: projectDetails[0],
     summary:
       'iOS app for exploring over 10,500 haunted places across the globe.',
+    externalHREF: 'https://afterdark-app.vercel.app',
   },
   {
     details: projectDetails[1],
@@ -22,4 +25,9 @@ export const projectPreviews: ProjectPreview[] = [
 
 export function getProjectHref(details: ProjectDetails): string {
   return `/projects/${details.slug}`;
+}
+
+/** Where a home page row points: the project's own site, or its page here. */
+export function getPreviewHref(preview: ProjectPreview): string {
+  return preview.externalHREF ?? getProjectHref(preview.details);
 }

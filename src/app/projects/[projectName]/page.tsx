@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { FaAppStoreIos, FaGithub, FaGlobe } from 'react-icons/fa';
 
 import {
-  projects,
+  visibleProjects,
   type Project,
   type ProjectFeature,
   type ProjectSection,
@@ -16,15 +16,18 @@ interface ProjectPageProps {
   params: Promise<{ projectName: string }>;
 }
 
+// Only the slugs below get a page; anything else (including hidden projects) is a 404.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return projects.map((project) => ({ projectName: project.details.slug }));
+  return visibleProjects.map((project) => ({ projectName: project.details.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { projectName } = await params;
-  const project = projects.find(
+  const project = visibleProjects.find(
     (currentProject) => currentProject.details.slug === projectName
   );
 
@@ -65,7 +68,7 @@ export async function generateMetadata({
 
 export default async function ProjectRoute({ params }: ProjectPageProps) {
   const { projectName } = await params;
-  const project = projects.find(
+  const project = visibleProjects.find(
     (currentProject) => currentProject.details.slug === projectName
   );
 
