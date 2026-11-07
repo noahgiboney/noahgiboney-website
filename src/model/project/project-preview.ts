@@ -17,11 +17,7 @@ export const projectPreviews: ProjectPreview[] = [
     summary:
       'Command line tool for converting audio files, tagging metadata, and exporting them in bulk.',
   },
-  {
-    details: projectDetails[2],
-    summary:
-      'iOS app for browsing and filtering near-earth asteroids with their history and orbital data.',
-  },
+  // Asteroid Vision is unlisted: reachable at /projects/asteroidvision but not shown here.
 ];
 
 export function getProjectHref(details: ProjectDetails): string {

@@ -75,7 +75,7 @@ export const projectDetails: ProjectDetails[] = [
     screenshots: [],
   },
   {
-    slug: "asteroid-vision",
+    slug: "asteroidvision",
     title: "Asteroid Vision",
     appIconSrc: "/asteroid-vision/asteroid-vision-app-logo.png",
     iconClassName: "",
