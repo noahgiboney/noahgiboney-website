@@ -22,6 +22,7 @@ export const workItems: ExperienceItem[] = [
     org: 'NMG Systems',
     role: 'Founder',
     dates: '2026 — Present',
+    url: 'https://nmgsystems.dev',
     logo: '/brand/nmg-mark-on-light.svg',
     logoClassName: 'p-1.5',
   },
