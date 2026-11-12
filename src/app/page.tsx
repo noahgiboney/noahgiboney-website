@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { FaAppStoreIos, FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 import ExperienceRow from './components/ExperienceRow';
 import ProjectRow from './components/ProjectRow';
@@ -10,8 +10,6 @@ import SocialLinks from './components/social-links/social-links';
 import { educationItems, workItems } from '@/model/experience';
 import { projectPreviews } from '@/model/project/project-preview';
 
-const APP_STORE_HREF =
-  'https://apps.apple.com/us/developer/noah-giboney/id1732186750';
 const GITHUB_HREF = 'https://github.com/noahgiboney';
 
 export const metadata: Metadata = {
@@ -23,6 +21,7 @@ export default function Home() {
     <div className="mx-auto w-full max-w-3xl px-nmg-4 py-nmg-6 sm:px-nmg-5 sm:py-20">
       <Intro />
       <Experience />
+      <Education />
       <Projects />
     </div>
   );
@@ -37,8 +36,8 @@ function Intro() {
         </h1>
 
         <p className="nmg-prose mt-nmg-3 max-w-md">
-          Interested in high performance computing and iOS app development.
-          Based in Houston and Los Angeles.
+          Focused on high performance computing. Based in Houston and Los
+          Angeles.
         </p>
 
         <div className="mt-nmg-5 flex flex-wrap items-center gap-nmg-2">
@@ -67,11 +66,20 @@ function Intro() {
 
 function Experience() {
   return (
-    <Section index="01" title="Experience" slug="work · education">
+    <Section index="01" title="Experience">
       <div className="divide-y divide-[color:var(--hairline)]">
         {workItems.map((item) => (
           <ExperienceRow key={item.org} {...item} />
         ))}
+      </div>
+    </Section>
+  );
+}
+
+function Education() {
+  return (
+    <Section index="02" title="Education">
+      <div className="divide-y divide-[color:var(--hairline)]">
         {educationItems.map((item) => (
           <ExperienceRow key={item.org} {...item} />
         ))}
@@ -83,7 +91,7 @@ function Experience() {
 function Projects() {
   return (
     <Section
-      index="02"
+      index="03"
       title="Portfolio"
       id="projects"
       action={
@@ -103,16 +111,6 @@ function Projects() {
           <ProjectRow key={project.details.slug} {...project} />
         ))}
       </div>
-
-      <Link
-        href={APP_STORE_HREF}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="nmg-label mt-nmg-3 inline-flex items-center gap-2 transition-colors duration-150 hover:text-iris-deep"
-      >
-        <FaAppStoreIos className="h-4 w-4" aria-hidden />
-        6,000+ DOWNLOADS ON THE APP STORE
-      </Link>
     </Section>
   );
 }

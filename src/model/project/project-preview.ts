@@ -12,7 +12,7 @@ export const projectPreviews: ProjectPreview[] = [
   {
     details: projectDetails[0],
     summary:
-      'iOS app for exploring over 10,500 haunted places across the globe.',
+      'iOS app for exploring 11,500+ haunted locations across the globe, with 8,000+ downloads on the App Store.',
     externalHREF: 'https://afterdark-app.vercel.app',
   },
   {
